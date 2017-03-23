@@ -1,0 +1,1350 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{064CFE24-AC9C-348B-872E-8D9CC9A8193A}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>obs</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obs.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obs32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obs.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obs32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">obs.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">obs32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">obs.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">obs32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4127;4201</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG=1;_DEBUG=1;DEBUG=1;_DEBUG=1;DL_OPENGL="libobs-opengl.dll";DL_D3D9="";DL_D3D11="libobs-d3d11.dll";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG=1;_DEBUG=1;DEBUG=1;_DEBUG=1;DL_OPENGL=\"libobs-opengl.dll\";DL_D3D9=\"\";DL_D3D11=\"libobs-d3d11.dll\";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Automatic MOC for target obs</Message>
+      <Command>setlocal
+cd D:\obs_studio\UI
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen D:/obs_studio/UI/CMakeFiles/obs_autogen.dir/ Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message>			</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/obs_studio/UI/Debug/obs32.exe D:/obs_studio/rundir/Debug/bin/32bit/obs32.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=Debug -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/Debug -DOUTPUT=D:/obs_studio/UI/pdbs -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=Debug -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/Debug -DOUTPUT=D:/obs_studio/rundir/Debug/bin/32bit -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/obs_studio/obs_studio_org/UI/data D:/obs_studio/rundir/Debug/data/obs-studio
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\deps\libff\Debug\libff.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Widgetsd.lib;obs-frontend-api\Debug\obs-frontend-api.lib;..\dependencies2015\win32\bin\libcurl.lib;crypt32.lib;..\deps\blake2\Debug\blake2.lib;..\deps\jansson\lib\Debug\jansson_d.lib;..\dependencies2015\win32\bin\avcodec.lib;..\dependencies2015\win32\bin\avfilter.lib;..\dependencies2015\win32\bin\avdevice.lib;..\dependencies2015\win32\bin\avutil.lib;..\dependencies2015\win32\bin\swscale.lib;..\dependencies2015\win32\bin\avformat.lib;..\dependencies2015\win32\bin\swresample.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Guid.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Cored.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\qtmaind.lib;..\libobs\Debug\obs.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/obs_studio/UI/Debug/obs32.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/obs_studio/UI/Debug/obs32.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4127;4201</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL="libobs-opengl.dll";DL_D3D9="";DL_D3D11="libobs-d3d11.dll";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL=\"libobs-opengl.dll\";DL_D3D9=\"\";DL_D3D11=\"libobs-d3d11.dll\";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Automatic MOC for target obs</Message>
+      <Command>setlocal
+cd D:\obs_studio\UI
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen D:/obs_studio/UI/CMakeFiles/obs_autogen.dir/ Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message>			</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/obs_studio/UI/Release/obs32.exe D:/obs_studio/rundir/Release/bin/32bit/obs32.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=Release -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/Release -DOUTPUT=D:/obs_studio/UI/pdbs -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=Release -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/Release -DOUTPUT=D:/obs_studio/rundir/Release/bin/32bit -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/obs_studio/obs_studio_org/UI/data D:/obs_studio/rundir/Release/data/obs-studio
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\deps\libff\Release\libff.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Widgets.lib;obs-frontend-api\Release\obs-frontend-api.lib;..\dependencies2015\win32\bin\libcurl.lib;crypt32.lib;..\deps\blake2\Release\blake2.lib;..\deps\jansson\lib\Release\jansson.lib;..\dependencies2015\win32\bin\avcodec.lib;..\dependencies2015\win32\bin\avfilter.lib;..\dependencies2015\win32\bin\avdevice.lib;..\dependencies2015\win32\bin\avutil.lib;..\dependencies2015\win32\bin\swscale.lib;..\dependencies2015\win32\bin\avformat.lib;..\dependencies2015\win32\bin\swresample.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Gui.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Core.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\qtmain.lib;..\libobs\Release\obs.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/obs_studio/UI/Release/obs32.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/obs_studio/UI/Release/obs32.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4127;4201</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL="libobs-opengl.dll";DL_D3D9="";DL_D3D11="libobs-d3d11.dll";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL=\"libobs-opengl.dll\";DL_D3D9=\"\";DL_D3D11=\"libobs-d3d11.dll\";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Automatic MOC for target obs</Message>
+      <Command>setlocal
+cd D:\obs_studio\UI
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen D:/obs_studio/UI/CMakeFiles/obs_autogen.dir/ MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message>			</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/obs_studio/UI/MinSizeRel/obs32.exe D:/obs_studio/rundir/MinSizeRel/bin/32bit/obs32.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=MinSizeRel -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/MinSizeRel -DOUTPUT=D:/obs_studio/UI/pdbs -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=MinSizeRel -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/MinSizeRel -DOUTPUT=D:/obs_studio/rundir/MinSizeRel/bin/32bit -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/obs_studio/obs_studio_org/UI/data D:/obs_studio/rundir/MinSizeRel/data/obs-studio
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\deps\libff\MinSizeRel\libff.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Widgets.lib;obs-frontend-api\MinSizeRel\obs-frontend-api.lib;..\dependencies2015\win32\bin\libcurl.lib;crypt32.lib;..\deps\blake2\MinSizeRel\blake2.lib;..\deps\jansson\lib\MinSizeRel\jansson.lib;..\dependencies2015\win32\bin\avcodec.lib;..\dependencies2015\win32\bin\avfilter.lib;..\dependencies2015\win32\bin\avdevice.lib;..\dependencies2015\win32\bin\avutil.lib;..\dependencies2015\win32\bin\swscale.lib;..\dependencies2015\win32\bin\avformat.lib;..\dependencies2015\win32\bin\swresample.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Gui.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Core.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\qtmain.lib;..\libobs\MinSizeRel\obs.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/obs_studio/UI/MinSizeRel/obs32.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/obs_studio/UI/MinSizeRel/obs32.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4127;4201</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL="libobs-opengl.dll";DL_D3D9="";DL_D3D11="libobs-d3d11.dll";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;DL_OPENGL=\"libobs-opengl.dll\";DL_D3D9=\"\";DL_D3D11=\"libobs-d3d11.dll\";UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;HAVE_OBSCONFIG_H;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\obs_studio\UI;D:\obs_studio\obs_studio_org\UI;D:\obs_studio\UI\obs_autogen\include;D:\obs_studio\obs_studio_org\UI\obs-frontend-api;D:\obs_studio\obs_studio_org\libobs;D:\obs_studio\dependencies2015\win32\include;D:\obs_studio\obs_studio_org\deps\blake2\src;D:\obs_studio\config;D:\obs_studio\obs_studio_org\deps\libff\.;C:\Qt\Qt5.8.0\5.8\msvc2015\include;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtWidgets;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtGui;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtANGLE;C:\Qt\Qt5.8.0\5.8\msvc2015\include\QtCore;C:\Qt\Qt5.8.0\5.8\msvc2015\.\mkspecs\win32-msvc2015;D:\obs_studio\obs_studio_org\deps\jansson\src;D:\obs_studio\deps\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Automatic MOC for target obs</Message>
+      <Command>setlocal
+cd D:\obs_studio\UI
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen D:/obs_studio/UI/CMakeFiles/obs_autogen.dir/ RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message>			</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy D:/obs_studio/UI/RelWithDebInfo/obs32.exe D:/obs_studio/rundir/RelWithDebInfo/bin/32bit/obs32.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=RelWithDebInfo -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/RelWithDebInfo -DOUTPUT=D:/obs_studio/UI/pdbs -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DCONFIG=RelWithDebInfo -DFNAME=obs32.exe -DINPUT=D:/obs_studio/UI/RelWithDebInfo -DOUTPUT=D:/obs_studio/rundir/RelWithDebInfo/bin/32bit -P D:/obs_studio/obs_studio_org/cmake/copy_on_debug_helper.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/obs_studio/obs_studio_org/UI/data D:/obs_studio/rundir/RelWithDebInfo/data/obs-studio
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\deps\libff\RelWithDebInfo\libff.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Widgets.lib;obs-frontend-api\RelWithDebInfo\obs-frontend-api.lib;..\dependencies2015\win32\bin\libcurl.lib;crypt32.lib;..\deps\blake2\RelWithDebInfo\blake2.lib;..\deps\jansson\lib\RelWithDebInfo\jansson.lib;..\dependencies2015\win32\bin\avcodec.lib;..\dependencies2015\win32\bin\avfilter.lib;..\dependencies2015\win32\bin\avdevice.lib;..\dependencies2015\win32\bin\avutil.lib;..\dependencies2015\win32\bin\swscale.lib;..\dependencies2015\win32\bin\avformat.lib;..\dependencies2015\win32\bin\swresample.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Gui.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\Qt5Core.lib;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\qtmain.lib;..\libobs\RelWithDebInfo\obs.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/obs_studio/UI/RelWithDebInfo/obs32.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/obs_studio/UI/RelWithDebInfo/obs32.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/UI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/UI/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/CMakeLists.txt;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindLibcurl.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;C:\Program Files\CMake\share\cmake-3.8\Modules\AutogenInfo.cmake.in;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/UI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/UI/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/CMakeLists.txt;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindLibcurl.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;C:\Program Files\CMake\share\cmake-3.8\Modules\AutogenInfo.cmake.in;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/UI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/UI/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/CMakeLists.txt;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindLibcurl.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;C:\Program Files\CMake\share\cmake-3.8\Modules\AutogenInfo.cmake.in;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/UI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/UI/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/CMakeLists.txt;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.8.0\5.8\msvc2015\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeParseArguments.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindLibcurl.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;C:\Program Files\CMake\share\cmake-3.8\Modules\AutogenInfo.cmake.in;D:\obs_studio\obs_studio_org\UI\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\NameDialog.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_NameDialog.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_NameDialog.h D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui;D:\obs_studio\obs_studio_org\UI\forms\NameDialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_NameDialog.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_NameDialog.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_NameDialog.h D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui;D:\obs_studio\obs_studio_org\UI\forms\NameDialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_NameDialog.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_NameDialog.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_NameDialog.h D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui;D:\obs_studio\obs_studio_org\UI\forms\NameDialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_NameDialog.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_NameDialog.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_NameDialog.h D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/NameDialog.ui;D:\obs_studio\obs_studio_org\UI\forms\NameDialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_NameDialog.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSLicenseAgreement.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSLicenseAgreement.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLicenseAgreement.h D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLicenseAgreement.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSLicenseAgreement.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSLicenseAgreement.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLicenseAgreement.h D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLicenseAgreement.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSLicenseAgreement.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSLicenseAgreement.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLicenseAgreement.h D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLicenseAgreement.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSLicenseAgreement.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSLicenseAgreement.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLicenseAgreement.h D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLicenseAgreement.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLicenseAgreement.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSLicenseAgreement.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSLogReply.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSLogReply.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLogReply.h D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLogReply.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSLogReply.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSLogReply.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLogReply.h D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLogReply.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSLogReply.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSLogReply.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLogReply.h D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLogReply.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSLogReply.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSLogReply.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSLogReply.h D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSLogReply.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSLogReply.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSLogReply.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasic.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasic.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasic.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasic.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasic.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasic.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasic.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasic.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasic.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasic.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasic.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasic.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasic.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasic.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasic.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasic.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasic.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasic.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasicTransform.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasicTransform.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicTransform.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicTransform.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasicTransform.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasicTransform.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicTransform.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicTransform.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasicTransform.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasicTransform.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicTransform.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicTransform.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasicTransform.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasicTransform.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicTransform.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicTransform.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicTransform.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasicTransform.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasicFilters.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasicFilters.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicFilters.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicFilters.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasicFilters.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasicFilters.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicFilters.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicFilters.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasicFilters.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasicFilters.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicFilters.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicFilters.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasicFilters.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasicFilters.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicFilters.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicFilters.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicFilters.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasicFilters.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSettings.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasicSettings.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSettings.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSettings.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasicSettings.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasicSettings.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSettings.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSettings.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasicSettings.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasicSettings.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSettings.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSettings.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasicSettings.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasicSettings.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSettings.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSettings.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSettings.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasicSettings.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSourceSelect.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasicSourceSelect.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSourceSelect.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSourceSelect.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasicSourceSelect.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasicSourceSelect.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSourceSelect.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSourceSelect.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasicSourceSelect.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasicSourceSelect.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSourceSelect.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSourceSelect.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasicSourceSelect.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasicSourceSelect.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicSourceSelect.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicSourceSelect.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicSourceSelect.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasicSourceSelect.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSBasicInteraction.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSBasicInteraction.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicInteraction.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicInteraction.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSBasicInteraction.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSBasicInteraction.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicInteraction.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicInteraction.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSBasicInteraction.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSBasicInteraction.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicInteraction.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicInteraction.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSBasicInteraction.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSBasicInteraction.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSBasicInteraction.h D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSBasicInteraction.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSBasicInteraction.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSBasicInteraction.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSUpdate.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSUpdate.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSUpdate.h D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSUpdate.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSUpdate.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSUpdate.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSUpdate.h D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSUpdate.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSUpdate.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSUpdate.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSUpdate.h D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSUpdate.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSUpdate.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSUpdate.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSUpdate.h D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSUpdate.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSUpdate.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSUpdate.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\OBSRemux.ui">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_OBSRemux.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSRemux.h D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSRemux.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\ui_OBSRemux.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_OBSRemux.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSRemux.h D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSRemux.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\ui_OBSRemux.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating ui_OBSRemux.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSRemux.h D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSRemux.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\ui_OBSRemux.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ui_OBSRemux.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\uic.exe -o D:/obs_studio/UI/ui_OBSRemux.h D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/OBSRemux.ui;D:\obs_studio\obs_studio_org\UI\forms\OBSRemux.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\ui_OBSRemux.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\UI\forms\obs.qrc">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating qrc_obs.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\rcc.exe --name obs --output D:/obs_studio/UI/qrc_obs.cpp D:/obs_studio/obs_studio_org/UI/forms/obs.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/UI/forms/obs.qrc;D:\obs_studio\obs_studio_org\UI\forms\images\mute.png;D:\obs_studio\obs_studio_org\UI\forms\images\unmute.png;D:\obs_studio\obs_studio_org\UI\forms\images\configuration21_16.png;D:\obs_studio\obs_studio_org\UI\forms\images\invisible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\visible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\list_remove.png;D:\obs_studio\obs_studio_org\UI\forms\images\add.png;D:\obs_studio\obs_studio_org\UI\forms\images\down.png;D:\obs_studio\obs_studio_org\UI\forms\images\editscene.png;D:\obs_studio\obs_studio_org\UI\forms\images\live.png;D:\obs_studio\obs_studio_org\UI\forms\images\properties.png;D:\obs_studio\obs_studio_org\UI\forms\images\up.png;D:\obs_studio\obs_studio_org\UI\forms\images\obs.png;D:\obs_studio\obs_studio_org\UI\forms\images\tray_active.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\advanced.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\video-display-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\decibel_audio_player.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\applications-system-2.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\system-settings-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network-bluetooth.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\preferences-desktop-keyboard-shortcuts.png;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\UI\qrc_obs.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating qrc_obs.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\rcc.exe --name obs --output D:/obs_studio/UI/qrc_obs.cpp D:/obs_studio/obs_studio_org/UI/forms/obs.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/UI/forms/obs.qrc;D:\obs_studio\obs_studio_org\UI\forms\images\mute.png;D:\obs_studio\obs_studio_org\UI\forms\images\unmute.png;D:\obs_studio\obs_studio_org\UI\forms\images\configuration21_16.png;D:\obs_studio\obs_studio_org\UI\forms\images\invisible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\visible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\list_remove.png;D:\obs_studio\obs_studio_org\UI\forms\images\add.png;D:\obs_studio\obs_studio_org\UI\forms\images\down.png;D:\obs_studio\obs_studio_org\UI\forms\images\editscene.png;D:\obs_studio\obs_studio_org\UI\forms\images\live.png;D:\obs_studio\obs_studio_org\UI\forms\images\properties.png;D:\obs_studio\obs_studio_org\UI\forms\images\up.png;D:\obs_studio\obs_studio_org\UI\forms\images\obs.png;D:\obs_studio\obs_studio_org\UI\forms\images\tray_active.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\advanced.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\video-display-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\decibel_audio_player.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\applications-system-2.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\system-settings-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network-bluetooth.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\preferences-desktop-keyboard-shortcuts.png;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\UI\qrc_obs.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating qrc_obs.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\rcc.exe --name obs --output D:/obs_studio/UI/qrc_obs.cpp D:/obs_studio/obs_studio_org/UI/forms/obs.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/UI/forms/obs.qrc;D:\obs_studio\obs_studio_org\UI\forms\images\mute.png;D:\obs_studio\obs_studio_org\UI\forms\images\unmute.png;D:\obs_studio\obs_studio_org\UI\forms\images\configuration21_16.png;D:\obs_studio\obs_studio_org\UI\forms\images\invisible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\visible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\list_remove.png;D:\obs_studio\obs_studio_org\UI\forms\images\add.png;D:\obs_studio\obs_studio_org\UI\forms\images\down.png;D:\obs_studio\obs_studio_org\UI\forms\images\editscene.png;D:\obs_studio\obs_studio_org\UI\forms\images\live.png;D:\obs_studio\obs_studio_org\UI\forms\images\properties.png;D:\obs_studio\obs_studio_org\UI\forms\images\up.png;D:\obs_studio\obs_studio_org\UI\forms\images\obs.png;D:\obs_studio\obs_studio_org\UI\forms\images\tray_active.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\advanced.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\video-display-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\decibel_audio_player.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\applications-system-2.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\system-settings-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network-bluetooth.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\preferences-desktop-keyboard-shortcuts.png;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\UI\qrc_obs.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating qrc_obs.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\Qt\Qt5.8.0\5.8\msvc2015\bin\rcc.exe --name obs --output D:/obs_studio/UI/qrc_obs.cpp D:/obs_studio/obs_studio_org/UI/forms/obs.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/UI/forms/obs.qrc;D:\obs_studio\obs_studio_org\UI\forms\images\mute.png;D:\obs_studio\obs_studio_org\UI\forms\images\unmute.png;D:\obs_studio\obs_studio_org\UI\forms\images\configuration21_16.png;D:\obs_studio\obs_studio_org\UI\forms\images\invisible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\visible_mask.png;D:\obs_studio\obs_studio_org\UI\forms\images\list_remove.png;D:\obs_studio\obs_studio_org\UI\forms\images\add.png;D:\obs_studio\obs_studio_org\UI\forms\images\down.png;D:\obs_studio\obs_studio_org\UI\forms\images\editscene.png;D:\obs_studio\obs_studio_org\UI\forms\images\live.png;D:\obs_studio\obs_studio_org\UI\forms\images\properties.png;D:\obs_studio\obs_studio_org\UI\forms\images\up.png;D:\obs_studio\obs_studio_org\UI\forms\images\obs.png;D:\obs_studio\obs_studio_org\UI\forms\images\tray_active.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\advanced.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\video-display-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\decibel_audio_player.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\applications-system-2.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\system-settings-3.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\network-bluetooth.png;D:\obs_studio\obs_studio_org\UI\forms\images\settings\preferences-desktop-keyboard-shortcuts.png;D:\obs_studio\obs_studio_org\UI\forms\obs.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\UI\qrc_obs.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\win-update\update-window.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\win-update\win-update.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\win-update\win-update-helpers.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\obs-app.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\platform.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-main.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-main.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-filters.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-settings.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-interaction.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-properties.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-outputs.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-source-select.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-license-agreement.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-status-bar.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-adv-audio.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-transform.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-basic-preview.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-namedialog.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-log-reply.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-projector.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\window-remux.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\properties-view.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\properties-view.moc.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\display-helpers.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\double-slider.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\focus-list.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\menu-button.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\mute-checkbox.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\volume-control.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\adv-audio-control.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\item-widget-helpers.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\visibility-checkbox.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\vertical-scroll-area.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\visibility-item-widget.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\slider-absoluteset-style.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\source-list-widget.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\qt-display.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\crash-report.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\hotkey-edit.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\source-label.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\remote-text.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\audio-encoders.hpp" />
+    <ClInclude Include="D:\obs_studio\obs_studio_org\UI\qt-wrappers.hpp" />
+    <ClInclude Include="D:\obs_studio\UI\ui_NameDialog.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSLicenseAgreement.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSLogReply.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasic.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasicTransform.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasicFilters.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasicSettings.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasicSourceSelect.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSBasicInteraction.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSUpdate.h" />
+    <ClInclude Include="D:\obs_studio\UI\ui_OBSRemux.h" />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\platform-windows.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\win-update\update-window.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\win-update\win-update.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\win-update\win-update-helpers.cpp"  />
+    <ResourceCompile Include="D:\obs_studio\obs_studio_org\UI\obs.rc"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\obs-app.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\api-interface.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-filters.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-settings.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-interaction.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-properties.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-outputs.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-source-select.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-scene-collections.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-transitions.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-dropfiles.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-main-profiles.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-license-agreement.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-status-bar.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-adv-audio.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-transform.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-basic-preview.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-namedialog.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-log-reply.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-projector.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\window-remux.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\properties-view.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\focus-list.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\menu-button.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\double-slider.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\volume-control.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\adv-audio-control.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\item-widget-helpers.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\visibility-checkbox.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\vertical-scroll-area.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\visibility-item-widget.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\slider-absoluteset-style.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\source-list-widget.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\qt-display.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\crash-report.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\hotkey-edit.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\source-label.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\remote-text.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\audio-encoders.cpp"  />
+    <ClCompile Include="D:\obs_studio\obs_studio_org\UI\qt-wrappers.cpp"  />
+    <ClCompile Include="D:\obs_studio\UI\qrc_obs.cpp"  />
+    <ClCompile Include="D:\obs_studio\UI\obs_autogen\moc_compilation.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\obs_studio\ZERO_CHECK.vcxproj">
+      <Project>BBE828AA-099B-3B7D-A4B0-8D192167449C</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\blake2\blake2.vcxproj">
+      <Project>35520079-403B-38A9-81D6-20F668CC5EFE</Project>
+      <Name>blake2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\jansson\jansson.vcxproj">
+      <Project>1A3903F9-CC6E-3C5A-B1E1-F476E51A16DD</Project>
+      <Name>jansson</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\libff\libff.vcxproj">
+      <Project>C966D3DB-3E0C-39BF-8E73-AAF3F5884C2E</Project>
+      <Name>libff</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\libobs\libobs.vcxproj">
+      <Project>A08798E4-AF77-3D45-90F0-C632269FFC73</Project>
+      <Name>libobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\UI\obs-frontend-api\obs-frontend-api.vcxproj">
+      <Project>FE6D402A-87A9-383A-BA16-7473D20024E3</Project>
+      <Name>obs-frontend-api</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

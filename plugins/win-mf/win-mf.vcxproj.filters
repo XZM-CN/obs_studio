@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-aac.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-aac-encoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-encoder-descriptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-h264.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-h264-encoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-common.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-encoder-descriptor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-aac-encoder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-mf\mf-h264-encoder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\plugins\win-mf\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B8E332A0-2755-3AB7-9B42-05807806B44A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{11C5D20C-9C2B-3139-B145-CDF4D3EE481B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

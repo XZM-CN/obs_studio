@@ -1,0 +1,30 @@
+# CMake generation dependency list for this directory.
+D:/obs_studio/obs_studio_org/libobs/CMakeLists.txt
+D:/obs_studio/obs_studio_org/cmake/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CheckIncludeFiles.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/FindFFmpeg.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindImageMagick.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+D:/obs_studio/obs_studio_org/libobs/obsconfig.h.in
+D:/obs_studio/obs_studio_org/libobs/LibObsConfig.cmake.in
+D:/obs_studio/obs_studio_org/libobs/LibObsConfig.cmake.in
+D:/obs_studio/obs_studio_org/libobs/LibObsConfigVersion.cmake.in

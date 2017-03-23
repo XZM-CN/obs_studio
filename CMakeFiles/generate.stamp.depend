@@ -1,0 +1,33 @@
+# CMake generation dependency list for this directory.
+D:/obs_studio/obs_studio_org/CMakeLists.txt
+D:/obs_studio/CMakeFiles/3.8.0-rc2/CMakeSystem.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInitialize.cmake
+D:/obs_studio/CMakeFiles/3.8.0-rc2/CMakeCCompiler.cmake
+D:/obs_studio/CMakeFiles/3.8.0-rc2/CMakeCXXCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+D:/obs_studio/CMakeFiles/3.8.0-rc2/CMakeRCCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/ObsHelpers.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/ObsCpack.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.8/Templates/CPackConfig.cmake.in
+C:/Program Files/CMake/share/cmake-3.8/Templates/CPackConfig.cmake.in
+C:/Program Files/CMake/share/cmake-3.8/Modules/GNUInstallDirs.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/FindCXX11.cmake
+D:/obs_studio/obs_studio_org/cmake/Modules/CopyMSVCBins.cmake
+D:/obs_studio/obs_studio_org/cmake/ALL_BUILD.vcxproj.user.in

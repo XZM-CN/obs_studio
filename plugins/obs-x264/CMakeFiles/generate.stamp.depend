@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+D:/obs_studio/obs_studio_org/plugins/obs-x264/CMakeLists.txt
+D:/obs_studio/obs_studio_org/cmake/Modules/FindLibx264.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake

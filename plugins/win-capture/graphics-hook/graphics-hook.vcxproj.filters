@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\graphics-hook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\funchook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\obfuscate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\gl-capture.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d8-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d9-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\dxgi-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d10-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d11-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d12-capture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\obs_studio\plugins\win-capture\graphics-hook\config\graphics-hook-config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\graphics-hook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook-info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\hook-helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\funchook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\obfuscate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\gl-decs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\d3d9-patches.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\plugins\win-capture\graphics-hook\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B8E332A0-2755-3AB7-9B42-05807806B44A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{11C5D20C-9C2B-3139-B145-CDF4D3EE481B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

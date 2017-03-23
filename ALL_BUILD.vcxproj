@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{005BE3EA-BCD8-3718-92DE-CEB1914AD9DA}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\obs_studio\obs_studio_org\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/obs_studio/obs_studio_org/CMakeLists.txt;D:\obs_studio\obs_studio_org\CMakeLists.txt;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCCompiler.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsHelpers.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsCpack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Modules\GNUInstallDirs.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindCXX11.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\CopyMSVCBins.cmake;D:\obs_studio\obs_studio_org\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\obs_studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/obs_studio/obs_studio_org/CMakeLists.txt;D:\obs_studio\obs_studio_org\CMakeLists.txt;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCCompiler.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsHelpers.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsCpack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Modules\GNUInstallDirs.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindCXX11.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\CopyMSVCBins.cmake;D:\obs_studio\obs_studio_org\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\obs_studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/obs_studio/obs_studio_org/CMakeLists.txt;D:\obs_studio\obs_studio_org\CMakeLists.txt;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCCompiler.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsHelpers.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsCpack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Modules\GNUInstallDirs.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindCXX11.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\CopyMSVCBins.cmake;D:\obs_studio\obs_studio_org\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\obs_studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/obs_studio/obs_studio_org/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/obs_studio/obs_studio_org -BD:/obs_studio --check-stamp-file D:/obs_studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/obs_studio/obs_studio_org/CMakeLists.txt;D:\obs_studio\obs_studio_org\CMakeLists.txt;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCCompiler.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;D:\obs_studio\CMakeFiles\3.8.0-rc2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsHelpers.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\ObsCpack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.8\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.8\Modules\GNUInstallDirs.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\FindCXX11.cmake;D:\obs_studio\obs_studio_org\cmake\Modules\CopyMSVCBins.cmake;D:\obs_studio\obs_studio_org\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\obs_studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\obs_studio\ZERO_CHECK.vcxproj">
+      <Project>BBE828AA-099B-3B7D-A4B0-8D192167449C</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\blake2\blake2.vcxproj">
+      <Project>35520079-403B-38A9-81D6-20F668CC5EFE</Project>
+      <Name>blake2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\coreaudio-encoder\coreaudio-encoder.vcxproj">
+      <Project>945EEAA0-FF08-39A5-9216-877D811066A5</Project>
+      <Name>coreaudio-encoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-ffmpeg\ffmpeg-mux\ffmpeg-mux.vcxproj">
+      <Project>0D7AC4A9-4A68-33BA-8E2F-D975629CF91F</Project>
+      <Name>ffmpeg-mux</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\file-updater\file-updater.vcxproj">
+      <Project>D0261CF6-A3B8-302C-8736-D9AD364745B5</Project>
+      <Name>file-updater</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\UI\frontend-plugins\frontend-tools\frontend-tools.vcxproj">
+      <Project>09D69281-C89E-3010-8498-E2E441A1CF96</Project>
+      <Name>frontend-tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-capture\get-graphics-offsets\get-graphics-offsets.vcxproj">
+      <Project>F7070EA9-75BC-31CB-BBED-150642049476</Project>
+      <Name>get-graphics-offsets</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\glad\glad.vcxproj">
+      <Project>D800B935-561A-3AFC-A19A-AF1837D2F77C</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-capture\graphics-hook\graphics-hook.vcxproj">
+      <Project>F4099BE9-1901-3FE3-8A94-8EC7F9DFB3DC</Project>
+      <Name>graphics-hook</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\image-source\image-source.vcxproj">
+      <Project>6DE50B50-E4B5-3B85-8713-F906CA2B594F</Project>
+      <Name>image-source</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-capture\inject-helper\inject-helper.vcxproj">
+      <Project>07FD7D82-B990-32C5-8133-9D254E5D34DD</Project>
+      <Name>inject-helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\ipc-util\ipc-util.vcxproj">
+      <Project>66E8BF0E-BFCE-31C6-ACE4-52800EE06772</Project>
+      <Name>ipc-util</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\jansson\jansson.vcxproj">
+      <Project>1A3903F9-CC6E-3C5A-B1E1-F476E51A16DD</Project>
+      <Name>jansson</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\libff\libff.vcxproj">
+      <Project>C966D3DB-3E0C-39BF-8E73-AAF3F5884C2E</Project>
+      <Name>libff</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\libobs\libobs.vcxproj">
+      <Project>A08798E4-AF77-3D45-90F0-C632269FFC73</Project>
+      <Name>libobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\libobs-d3d11\libobs-d3d11.vcxproj">
+      <Project>421472E6-76A8-3EE1-8BC0-3CDF1648C6F0</Project>
+      <Name>libobs-d3d11</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\libobs-opengl\libobs-opengl.vcxproj">
+      <Project>10EDF492-0329-3008-978C-2DDD21EA7BB9</Project>
+      <Name>libobs-opengl</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\lzma\lzma.vcxproj">
+      <Project>5CDB4A38-2151-3C0C-8448-5E383A8020C0</Project>
+      <Name>lzma</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\UI\obs.vcxproj">
+      <Project>064CFE24-AC9C-348B-872E-8D9CC9A8193A</Project>
+      <Name>obs</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-ffmpeg\obs-ffmpeg.vcxproj">
+      <Project>8D028428-801C-3349-94DB-6232B7DC6BCE</Project>
+      <Name>obs-ffmpeg</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-filters\obs-filters.vcxproj">
+      <Project>D79B84CA-241D-3143-92D5-25C22B615F71</Project>
+      <Name>obs-filters</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\UI\obs-frontend-api\obs-frontend-api.vcxproj">
+      <Project>FE6D402A-87A9-383A-BA16-7473D20024E3</Project>
+      <Name>obs-frontend-api</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-outputs\obs-outputs.vcxproj">
+      <Project>1BF898F4-4B90-31FA-A723-30310FA3DD99</Project>
+      <Name>obs-outputs</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-qsv11\obs-qsv11.vcxproj">
+      <Project>DDC67352-8785-301D-B7A1-3D42EE16DB70</Project>
+      <Name>obs-qsv11</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-text\obs-text.vcxproj">
+      <Project>C92983F6-CD49-34EA-AC3D-DB2DF79D982C</Project>
+      <Name>obs-text</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-transitions\obs-transitions.vcxproj">
+      <Project>953149AC-CFBD-34A1-A092-AAFE4B2715F8</Project>
+      <Name>obs-transitions</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-vst\obs-vst.vcxproj">
+      <Project>2206AD16-43B1-3822-B532-0DD1798B9718</Project>
+      <Name>obs-vst</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\obs-x264\obs-x264.vcxproj">
+      <Project>A2517F61-7D5B-3836-91DD-97E82793A442</Project>
+      <Name>obs-x264</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\rtmp-services\rtmp-services.vcxproj">
+      <Project>48A311BF-B23E-3F79-8088-A3767F8234E8</Project>
+      <Name>rtmp-services</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\test\test-input\test-input.vcxproj">
+      <Project>B61AC428-CB13-3EC7-B3F0-E72DF8DFA0E4</Project>
+      <Name>test-input</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\text-freetype2\text-freetype2.vcxproj">
+      <Project>D983FD77-E871-3250-B2A8-F9AB1D07ECB2</Project>
+      <Name>text-freetype2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\deps\w32-pthreads\w32-pthreads.vcxproj">
+      <Project>BB7C8BD9-4AD2-3213-A17D-1A6D5B6CC157</Project>
+      <Name>w32-pthreads</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-capture\win-capture.vcxproj">
+      <Project>0A5F9E2C-F780-3EB9-95E9-41D3C3EE3625</Project>
+      <Name>win-capture</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\decklink\win\win-decklink.vcxproj">
+      <Project>A9898F87-EBC7-3B5A-AB32-D9872EF64966</Project>
+      <Name>win-decklink</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-dshow\win-dshow.vcxproj">
+      <Project>83342642-8424-37E7-B4E1-224AD478E0A3</Project>
+      <Name>win-dshow</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-mf\win-mf.vcxproj">
+      <Project>519B32CA-3A1E-371B-B787-7BCB44991474</Project>
+      <Name>win-mf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\test\win\win-test.vcxproj">
+      <Project>3720EB89-D4C0-380E-8BCD-68FF4DADBF5F</Project>
+      <Name>win-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\obs_studio\plugins\win-wasapi\win-wasapi.vcxproj">
+      <Project>0FDDC95A-64A9-3A97-8689-877B32B243E0</Project>
+      <Name>win-wasapi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
