@@ -219,6 +219,7 @@ struct sem_t_
 #define PTW32_OBJECT_AUTO_INIT ((void *)(size_t) -1)
 #define PTW32_OBJECT_INVALID   NULL
 
+// xzm_@_线程互斥结构体
 struct pthread_mutex_t_
 {
   LONG lock_idx;		/* Provides exclusive access to mutex state

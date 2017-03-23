@@ -44,6 +44,7 @@
 #include "decl.h"
 #include "signal.h"
 
+// xzm_@_信号回调结构体
 struct signal_callback {
 	signal_callback_t callback;
 	void              *data;

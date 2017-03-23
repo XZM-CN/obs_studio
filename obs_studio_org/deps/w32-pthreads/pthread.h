@@ -586,20 +586,21 @@ typedef struct {
     unsigned int x;             /* Extra information - reuse count etc */
 } ptw32_handle_t;
 
-typedef ptw32_handle_t pthread_t;
-typedef struct pthread_attr_t_ * pthread_attr_t;
-typedef struct pthread_once_t_ pthread_once_t;
-typedef struct pthread_key_t_ * pthread_key_t;
-typedef struct pthread_mutex_t_ * pthread_mutex_t;
-typedef struct pthread_mutexattr_t_ * pthread_mutexattr_t;
-typedef struct pthread_cond_t_ * pthread_cond_t;
-typedef struct pthread_condattr_t_ * pthread_condattr_t;
+// xzm_@_线程数据结构集合
+typedef ptw32_handle_t pthread_t;// xzm_@_
+typedef struct pthread_attr_t_ * pthread_attr_t;// xzm_@_
+typedef struct pthread_once_t_ pthread_once_t;// xzm_@_
+typedef struct pthread_key_t_ * pthread_key_t;// xzm_@_
+typedef struct pthread_mutex_t_ * pthread_mutex_t;// xzm_@_线程互斥结构体
+typedef struct pthread_mutexattr_t_ * pthread_mutexattr_t;// xzm_@_
+typedef struct pthread_cond_t_ * pthread_cond_t;// xzm_@_
+typedef struct pthread_condattr_t_ * pthread_condattr_t;// xzm_@_
 #endif
-typedef struct pthread_rwlock_t_ * pthread_rwlock_t;
-typedef struct pthread_rwlockattr_t_ * pthread_rwlockattr_t;
-typedef struct pthread_spinlock_t_ * pthread_spinlock_t;
-typedef struct pthread_barrier_t_ * pthread_barrier_t;
-typedef struct pthread_barrierattr_t_ * pthread_barrierattr_t;
+typedef struct pthread_rwlock_t_ * pthread_rwlock_t;// xzm_@_
+typedef struct pthread_rwlockattr_t_ * pthread_rwlockattr_t;// xzm_@_
+typedef struct pthread_spinlock_t_ * pthread_spinlock_t;// xzm_@_
+typedef struct pthread_barrier_t_ * pthread_barrier_t;// xzm_@_
+typedef struct pthread_barrierattr_t_ * pthread_barrierattr_t;// xzm_@_
 
 /*
  * ====================

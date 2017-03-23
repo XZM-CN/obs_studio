@@ -60,6 +60,7 @@ static inline void decl_param_free(struct decl_param *param)
 	memset(param, 0, sizeof(struct decl_param));
 }
 
+// 数据类型参数信息
 struct decl_info {
 	char                      *name;
 	const char                *decl_string;

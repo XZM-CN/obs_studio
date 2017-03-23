@@ -56,8 +56,8 @@ extern "C" {
  */
 
 struct signal_handler;
-typedef struct signal_handler signal_handler_t;
-typedef void (*signal_callback_t)(void*, calldata_t*);
+typedef struct signal_handler signal_handler_t;// xzm_@_信号句柄，涉及到堆栈
+typedef void (*signal_callback_t)(void*, calldata_t*);// xzm_@_信号回调函数
 
 EXPORT signal_handler_t *signal_handler_create(void);
 EXPORT void signal_handler_destroy(signal_handler_t *handler);

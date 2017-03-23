@@ -240,3 +240,26 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/UI/frontend-plugins/frontend-tools/CMakeFiles/frontend-tools_autogen.dir/AutogenOldSettings.cmake
+/UI/frontend-plugins/frontend-tools/frontend-tools_autogen/EWIEGA46WW/moc_auto-scene-switcher.cpp
+/UI/CMakeFiles/obs_autogen.dir/AutogenOldSettings.cmake
+/UI/obs_autogen/EWIEGA46WW
+/UI/obs_autogen/moc_compilation.cpp
+/UI/obs_autogen/4OBZZPDMBP/moc_win-update.cpp
+/UI/obs_autogen/4OBZZPDMBP/moc_update-window.cpp
+/UI/ui_OBSUpdate.h
+/UI/ui_OBSRemux.h
+/UI/ui_OBSLogReply.h
+/UI/ui_OBSLicenseAgreement.h
+/UI/ui_OBSBasicTransform.h
+/UI/ui_OBSBasicSourceSelect.h
+/UI/ui_OBSBasicSettings.h
+/UI/ui_OBSBasicInteraction.h
+/UI/ui_OBSBasicFilters.h
+/UI/ui_OBSBasic.h
+/UI/ui_NameDialog.h
+/UI/frontend-plugins/frontend-tools/ui_output-timer.h
+/UI/frontend-plugins/frontend-tools/ui_auto-scene-switcher.h
+/UI/frontend-plugins/frontend-tools/frontend-tools_autogen/moc_compilation.cpp
+/UI/frontend-plugins/frontend-tools/frontend-tools_autogen/EWIEGA46WW/moc_output-timer.cpp
+/UI/qrc_obs.cpp

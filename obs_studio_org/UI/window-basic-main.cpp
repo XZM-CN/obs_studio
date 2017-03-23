@@ -3160,7 +3160,7 @@ void OBSBasic::on_scenes_customContextMenuRequested(const QPoint &pos)
 	popup.exec(QCursor::pos());
 }
 
-// xzm_@_home_[场景]-右键添加触发该事件
+// xzm_@_home_[场景]-添加场景会触发该函数
 void OBSBasic::on_actionAddScene_triggered()
 {
 	string name;
@@ -3183,12 +3183,13 @@ void OBSBasic::on_actionAddScene_triggered()
 	if (accepted) {
 		if (name.empty()) {
 			QMessageBox::information(this,
-					QTStr("NoNameEntered.Title"),
-					QTStr("NoNameEntered.Text"));
+				QTStr("NoNameEntered.Title"),
+				QTStr("NoNameEntered.Text"));
 			on_actionAddScene_triggered();
 			return;
 		}
 
+		// 创建创建场景资源
 		obs_source_t *source = obs_get_source_by_name(name.c_str());
 		if (source) {
 			QMessageBox::information(this,

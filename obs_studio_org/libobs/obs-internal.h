@@ -380,6 +380,7 @@ struct obs_core_hotkeys {
 	char                            *sceneitem_hide;
 };
 
+// xzm_@_OBSºËÐÄ¶ÔÏó
 struct obs_core {
 	struct obs_module               *first_module;
 	DARRAY(struct obs_module_path)  module_paths;
