@@ -1,3 +1,27 @@
+//////////////////////////////////基本信息///////////////////////////////////////////////////////  
+// ><免责声明 ><  Copyright (c) 2017-2017 by Xie Zhimin All Rights Reserved  
+// ><创建日期 ><  2017/03/21  
+// ><创建时间 ><  2017年:03月:21日   18时:00分:31秒  
+// ><文件     ><  darray.h  
+// ><文件路径 ><  D:\newSvnCode\OBS\trunk\obs_studio\libobs\util  
+// ><隶属工程><   obs-studio  
+// ><当前用户 ><  Administrator  
+// ><作者     ><  Open Broadcaster Software   
+// ><出处     >< 《 https://obsproject.com/ 》  
+// ><目的     >< 【】  
+// ><设计技术 ><   
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+// ><         ><  4.  
+//////////////////////////////////迭代修改///////////////////////////////////////////////////////  
+// ><作者     ><  xzm  
+// ><修改日期 ><  2017年:03月:21日   18时:00分:31秒  
+// ><原因     ><    
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Copyright (c) 2013 Hugh Bailey <obs.jim@gmail.com>
  *
@@ -65,12 +89,15 @@ static inline size_t darray_alloc_size(const size_t element_size,
 	return element_size*da->num;
 }
 
+// 将内存地址按darray大小的倍数进行偏移
+// 返回第idx个darray类型元素的地址
 static inline void *darray_item(const size_t element_size,
 		const struct darray *da, size_t idx)
 {
 	return (void*)(((uint8_t*)da->array) + element_size*idx);
 }
 
+// 返回darray类型的最后一个元素
 static inline void *darray_end(const size_t element_size,
 		const struct darray *da)
 {
@@ -80,6 +107,15 @@ static inline void *darray_end(const size_t element_size,
 	return darray_item(element_size, da, da->num-1);
 }
 
+/*
+函数reserve()将字符串的容量设置为至少size. 
+如果size指定的数值要小于当前字符串中的字符数(亦即size < this→size()),
+容量将被设置为可以恰好容纳字符的数值.
+reserve()以线性时间(linear time)运行。
+
+它最大的用处是为了避免反复重新分配缓冲区内存而导致效率降低，
+或者在使用某些STL操作(例如std::copy)之前保证缓冲区够大。
+*/
 static inline void darray_reserve(const size_t element_size,
 		struct darray *dst, const size_t capacity)
 {

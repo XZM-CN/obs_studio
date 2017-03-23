@@ -1,3 +1,27 @@
+//////////////////////////////////基本信息///////////////////////////////////////////////////////  
+// ><免责声明 ><  Copyright (c) 2017-2017 by Xie Zhimin All Rights Reserved  
+// ><创建日期 ><  2017/03/21  
+// ><创建时间 ><  2017年:03月:21日   18时:03分:09秒  
+// ><文件     ><  platform.c  
+// ><文件路径 ><  D:\newSvnCode\OBS\trunk\obs_studio\libobs\util  
+// ><隶属工程><   obs-studio  
+// ><当前用户 ><  Administrator  
+// ><作者     ><  Open Broadcaster Software   
+// ><出处     >< 《 https://obsproject.com/ 》  
+// ><目的     >< 【】  
+// ><设计技术 ><   
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+// ><         ><  4.  
+//////////////////////////////////迭代修改///////////////////////////////////////////////////////  
+// ><作者     ><  xzm  
+// ><修改日期 ><  2017年:03月:21日   18时:03分:09秒  
+// ><原因     ><    
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Copyright (c) 2013-2014 Hugh Bailey <obs.jim@gmail.com>
  *
@@ -327,6 +351,7 @@ int64_t os_get_file_size(const char *path)
 	return sz;
 }
 
+// xzm_@_将多字节字符序列转换成wchar_t*
 size_t os_mbs_to_wcs(const char *str, size_t len, wchar_t *dst, size_t dst_size)
 {
 	size_t out_len;
@@ -334,14 +359,17 @@ size_t os_mbs_to_wcs(const char *str, size_t len, wchar_t *dst, size_t dst_size)
 	if (!str)
 		return 0;
 
+	// xzm_@_mbstowcs将多字节字符序列转换为相应的宽字符序列
 	out_len = dst ? (dst_size - 1) : mbstowcs(NULL, str, len);
 
 	if (dst) {
 		if (!dst_size)
 			return 0;
 
-		if (out_len)
+		if (out_len) {
+			// xzm_@_mbstowcs将多字节字符序列转换为相应的宽字符序列
 			out_len = mbstowcs(dst, str, out_len + 1);
+		}
 
 		dst[out_len] = 0;
 	}
@@ -777,4 +805,19 @@ char *os_generate_formatted_filename(const char *extension, bool space,
 		dstr_mid(&sf, &sf, 0, 255);
 
 	return sf.array;
+}
+
+wchar_t* characterSet_char2wchar(char* str)
+{
+#ifdef _WIN32
+	if (str)
+	{
+		wchar_t* pwstr;
+		pwstr = NULL;
+		os_mbs_to_wcs_ptr(str,strlen(str), &pwstr);
+		return pwstr;
+	}
+#else
+	return _T("平台导致容错失误");
+#endif
 }

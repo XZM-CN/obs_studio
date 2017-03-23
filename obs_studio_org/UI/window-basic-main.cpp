@@ -1,3 +1,27 @@
+//////////////////////////////////基本信息///////////////////////////////////////////////////////  
+// ><免责声明 ><  Copyright (c) 2017-2017 by Xie Zhimin All Rights Reserved  
+// ><创建日期 ><  2017/03/21  
+// ><创建时间 ><  2017年:03月:21日   16时:35分:30秒  
+// ><文件     ><  window-basic-main.cpp  
+// ><文件路径 ><  D:\newSvnCode\OBS\trunk\obs_studio\UI  
+// ><隶属工程><   obs-studio  
+// ><当前用户 ><  Administrator  
+// ><作者     ><  Open Broadcaster Software   
+// ><出处     >< 《 https://obsproject.com/ 》  
+// ><目的     >< 【】  
+// ><设计技术 ><   
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+// ><         ><  4.  
+//////////////////////////////////迭代修改///////////////////////////////////////////////////////  
+// ><作者     ><  xzm  
+// ><修改日期 ><  2017年:03月:21日   16时:35分:30秒  
+// ><原因     ><    
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /******************************************************************************
     Copyright (C) 2013-2015 by Hugh Bailey <obs.jim@gmail.com>
                                Zachary Lund <admin@computerquip.com>
@@ -91,9 +115,9 @@ static T GetOBSRef(QListWidgetItem *item)
 template <typename T>
 static void SetOBSRef(QListWidgetItem *item, T &&val)
 {
-	item->setData(static_cast<int>(QtDataRole::OBSRef),
-			QVariant::fromValue(val));
+	item->setData(static_cast<int>(QtDataRole::OBSRef), QVariant::fromValue(val));
 }
+
 
 static void AddExtraModulePaths()
 {
@@ -124,8 +148,7 @@ static void AddExtraModulePaths()
 static QList<QKeySequence> DeleteKeys;
 
 OBSBasic::OBSBasic(QWidget *parent)
-	: OBSMainWindow  (parent),
-	  ui             (new Ui::OBSBasic)
+	: OBSMainWindow  (parent), ui (new Ui::OBSBasic)
 {
 	setAttribute(Qt::WA_NativeWindow);
 
@@ -251,6 +274,7 @@ OBSBasic::OBSBasic(QWidget *parent)
 	addNudge(Qt::Key_Right, SLOT(NudgeRight()));
 }
 
+// xzm_@_home_保存音频Device
 static void SaveAudioDevice(const char *name, int channel, obs_data_t *parent,
 		vector<OBSSource> &audioSources)
 {
@@ -268,6 +292,7 @@ static void SaveAudioDevice(const char *name, int channel, obs_data_t *parent,
 	obs_source_release(source);
 }
 
+// xzm_@_home_保存音频Device
 static obs_data_t *GenerateSaveData(obs_data_array_t *sceneOrder,
 		obs_data_array_t *quickTransitionData, int transitionDuration,
 		obs_data_array_t *transitions,
@@ -359,6 +384,7 @@ void OBSBasic::ClearVolumeControls()
 	volumes.clear();
 }
 
+// xzm_@_home_清除音量控制
 obs_data_array_t *OBSBasic::SaveSceneListOrder()
 {
 	obs_data_array_t *sceneOrder = obs_data_array_create();
@@ -374,6 +400,7 @@ obs_data_array_t *OBSBasic::SaveSceneListOrder()
 	return sceneOrder;
 }
 
+// xzm_@_home_保存工程
 obs_data_array_t *OBSBasic::SaveProjectors()
 {
 	obs_data_array_t *saveProjector = obs_data_array_create();
@@ -389,6 +416,7 @@ obs_data_array_t *OBSBasic::SaveProjectors()
 	return saveProjector;
 }
 
+// xzm_@_home_保存工程
 obs_data_array_t *OBSBasic::SavePreviewProjectors()
 {
 	obs_data_array_t *saveProjector = obs_data_array_create();
@@ -404,6 +432,7 @@ obs_data_array_t *OBSBasic::SavePreviewProjectors()
 	return saveProjector;
 }
 
+// xzm_@_home_保存工程
 void OBSBasic::Save(const char *file)
 {
 	OBSScene scene = GetCurrentScene();
@@ -820,6 +849,7 @@ retryScene:
 
 #define SERVICE_PATH "service.json"
 
+// xzm_@_home_设置串流服务器地址
 void OBSBasic::SaveService()
 {
 	if (!service)
@@ -1609,6 +1639,7 @@ void OBSBasic::CreateHotkeys()
 	LoadHotkey(transitionHotkey, "OBSBasic.Transition");
 }
 
+// xzm_@_home_清除热键
 void OBSBasic::ClearHotkeys()
 {
 	obs_hotkey_pair_unregister(streamingHotkeys);
@@ -1619,6 +1650,7 @@ void OBSBasic::ClearHotkeys()
 	obs_hotkey_unregister(transitionHotkey);
 }
 
+// xzm_@_home_退出所发生的事情
 OBSBasic::~OBSBasic()
 {
 	if (updateCheckThread && updateCheckThread->isRunning())
@@ -1714,6 +1746,7 @@ OBSBasic::~OBSBasic()
 #endif
 }
 
+// xzm_@_home_保存线程的场景集合
 void OBSBasic::SaveProjectNow()
 {
 	if (disableSaving)
@@ -1723,6 +1756,7 @@ void OBSBasic::SaveProjectNow()
 	SaveProjectDeferred();
 }
 
+// xzm_@_home_保存工程
 void OBSBasic::SaveProject()
 {
 	if (disableSaving)
@@ -1733,6 +1767,7 @@ void OBSBasic::SaveProject()
 			Qt::QueuedConnection);
 }
 
+// xzm_@_home_保存工程
 void OBSBasic::SaveProjectDeferred()
 {
 	if (disableSaving)
@@ -1764,22 +1799,26 @@ void OBSBasic::SaveProjectDeferred()
 	Save(savePath);
 }
 
+// xzm_@_home_时刻在刷新
 OBSScene OBSBasic::GetCurrentScene()
 {
 	QListWidgetItem *item = ui->scenes->currentItem();
 	return item ? GetOBSRef<OBSScene>(item) : nullptr;
 }
 
+// xzm_@_home_鼠标右键来源第五步--获取场景item
 OBSSceneItem OBSBasic::GetSceneItem(QListWidgetItem *item)
 {
 	return item ? GetOBSRef<OBSSceneItem>(item) : nullptr;
 }
 
+// xzm_@_home_[来源]--item右键重命名
 OBSSceneItem OBSBasic::GetCurrentSceneItem()
 {
 	return GetSceneItem(GetTopSelectedSourceItem());
 }
 
+// xzm_@_home_[系统菜单] --预览缩放--刚移动到菜单上
 void OBSBasic::UpdatePreviewScalingMenu()
 {
 	ScalingMode scalingMode = ui->preview->GetScalingMode();
@@ -1791,6 +1830,7 @@ void OBSBasic::UpdatePreviewScalingMenu()
 			scalingMode == ScalingMode::Output);
 }
 
+// xzm_@_home_更新来源item(每增加或者减少都会触发来源更新item)
 void OBSBasic::UpdateSources(OBSScene scene)
 {
 	ClearListItems(ui->sources);
@@ -1806,6 +1846,7 @@ void OBSBasic::UpdateSources(OBSScene scene)
 			}, this);
 }
 
+// xzm_@_home_[场景]-插入item
 void OBSBasic::InsertSceneItem(obs_sceneitem_t *item)
 {
 	QListWidgetItem *listItem = new QListWidgetItem();
@@ -1817,6 +1858,7 @@ void OBSBasic::InsertSceneItem(obs_sceneitem_t *item)
 	SetupVisibilityItem(ui->sources, listItem, item);
 }
 
+// xzm_@_创建交互场景窗口
 void OBSBasic::CreateInteractionWindow(obs_source_t *source)
 {
 	if (interaction)
@@ -1827,6 +1869,7 @@ void OBSBasic::CreateInteractionWindow(obs_source_t *source)
 	interaction->setAttribute(Qt::WA_DeleteOnClose, true);
 }
 
+// xzm_@_home_[混音器]属性
 void OBSBasic::CreatePropertiesWindow(obs_source_t *source)
 {
 	if (properties)
@@ -1837,6 +1880,7 @@ void OBSBasic::CreatePropertiesWindow(obs_source_t *source)
 	properties->setAttribute(Qt::WA_DeleteOnClose, true);
 }
 
+// xzm_@_home_创建滤镜窗口(所有的滤镜窗口都在这里创建)
 void OBSBasic::CreateFiltersWindow(obs_source_t *source)
 {
 	if (filters)
@@ -1849,6 +1893,7 @@ void OBSBasic::CreateFiltersWindow(obs_source_t *source)
 
 /* Qt callbacks for invokeMethod */
 
+// xzm_@_增加场景
 void OBSBasic::AddScene(OBSSource source)
 {
 	const char *name  = obs_source_get_name(source);
@@ -1922,6 +1967,7 @@ void OBSBasic::AddScene(OBSSource source)
 		api->on_event(OBS_FRONTEND_EVENT_SCENE_LIST_CHANGED);
 }
 
+// xzm_@_移除场景
 void OBSBasic::RemoveScene(OBSSource source)
 {
 	obs_scene_t *scene = obs_scene_from_source(source);
@@ -1955,6 +2001,7 @@ void OBSBasic::RemoveScene(OBSSource source)
 		api->on_event(OBS_FRONTEND_EVENT_SCENE_LIST_CHANGED);
 }
 
+// xzm_@_给场景增加item
 void OBSBasic::AddSceneItem(OBSSceneItem item)
 {
 	obs_scene_t  *scene  = obs_sceneitem_get_scene(item);
@@ -1974,6 +2021,7 @@ void OBSBasic::AddSceneItem(OBSSceneItem item)
 	}
 }
 
+// xzm_@_移除场景的"item"
 void OBSBasic::RemoveSceneItem(OBSSceneItem item)
 {
 	for (int i = 0; i < ui->sources->count(); i++) {
@@ -1998,6 +2046,7 @@ void OBSBasic::RemoveSceneItem(OBSSceneItem item)
 	}
 }
 
+// xzm_@_home_更新场景item的数目
 void OBSBasic::UpdateSceneSelection(OBSSource source)
 {
 	if (source) {
@@ -2020,6 +2069,7 @@ void OBSBasic::UpdateSceneSelection(OBSSource source)
 	}
 }
 
+// xzm_@_home_[场景]-更新item名称
 static void RenameListValues(QListWidget *listWidget, const QString &newName,
 		const QString &prevName)
 {
@@ -2030,6 +2080,7 @@ static void RenameListValues(QListWidget *listWidget, const QString &newName,
 		items[i]->setText(newName);
 }
 
+// xzm_@_更改来源item的名称
 void OBSBasic::RenameSources(QString newName, QString prevName)
 {
 	RenameListValues(ui->scenes,  newName, prevName);
@@ -2050,6 +2101,7 @@ void OBSBasic::RenameSources(QString newName, QString prevName)
 	SaveProject();
 }
 
+// xzm_@_home_[场景]-item被选中
 void OBSBasic::SelectSceneItem(OBSScene scene, OBSSceneItem item, bool select)
 {
 	SignalBlocker sourcesSignalBlocker(ui->sources);
@@ -2072,6 +2124,7 @@ void OBSBasic::SelectSceneItem(OBSScene scene, OBSSceneItem item, bool select)
 	}
 }
 
+// xzm_@_home_[混音器]滤镜
 void OBSBasic::GetAudioSourceFilters()
 {
 	QAction *action = reinterpret_cast<QAction*>(sender());
@@ -2081,6 +2134,7 @@ void OBSBasic::GetAudioSourceFilters()
 	CreateFiltersWindow(source);
 }
 
+// xzm_@_home_[混音器]属性
 void OBSBasic::GetAudioSourceProperties()
 {
 	QAction *action = reinterpret_cast<QAction*>(sender());
@@ -2090,6 +2144,7 @@ void OBSBasic::GetAudioSourceProperties()
 	CreatePropertiesWindow(source);
 }
 
+// xzm_@_home_[混音器]设置
 void OBSBasic::VolControlContextMenu()
 {
 	VolControl *vol = reinterpret_cast<VolControl*>(sender());
@@ -2126,6 +2181,7 @@ void OBSBasic::ActivateAudioSource(OBSSource source)
 	ui->volumeWidgets->layout()->addWidget(vol);
 }
 
+// xzm_@_home_停止音频源--这里指的是删除来源--添加的20x20 Random Pixel Texture Source(Test)（右键来源弹出菜单）
 void OBSBasic::DeactivateAudioSource(OBSSource source)
 {
 	for (size_t i = 0; i < volumes.size(); i++) {
@@ -2137,6 +2193,7 @@ void OBSBasic::DeactivateAudioSource(OBSSource source)
 	}
 }
 
+// xzm_@_home_查询因删除场景item而要移除的来源
 bool OBSBasic::QueryRemoveSource(obs_source_t *source)
 {
 	const char *name  = obs_source_get_name(source);
@@ -2163,6 +2220,7 @@ void init_sparkle_updater(bool update_to_undeployed);
 void trigger_sparkle_update();
 #endif
 
+// xzm_@_定期检查系统跟新
 void OBSBasic::TimedCheckForUpdates()
 {
 	if (!config_get_bool(App()->GlobalConfig(), "General",
@@ -2192,6 +2250,7 @@ void OBSBasic::TimedCheckForUpdates()
 #endif
 }
 
+// xzm_@_检查系统更新
 void OBSBasic::CheckForUpdates(bool manualUpdate)
 {
 #ifdef UPDATE_SPARKLE
@@ -2220,6 +2279,7 @@ void OBSBasic::updateCheckFinished()
 	ui->actionCheckForUpdates->setEnabled(true);
 }
 
+// xzm_@_home_复制选定的场景
 void OBSBasic::DuplicateSelectedScene()
 {
 	OBSScene curScene = GetCurrentScene();
@@ -2277,6 +2337,7 @@ void OBSBasic::DuplicateSelectedScene()
 	}
 }
 
+// xzm_@_home_移除选中的场景item
 void OBSBasic::RemoveSelectedScene()
 {
 	OBSScene scene = GetCurrentScene();
@@ -2362,6 +2423,7 @@ void OBSBasic::ReorderSources(OBSScene scene)
 
 /* OBS Callbacks */
 
+// xzm_@_场景-
 void OBSBasic::SceneReordered(void *data, calldata_t *params)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2372,6 +2434,7 @@ void OBSBasic::SceneReordered(void *data, calldata_t *params)
 			Q_ARG(OBSScene, OBSScene(scene)));
 }
 
+// xzm_@_场景-增加item--xzm_@_home_[来源]--添加-20x20 Random Pixel Texture Source(Test)（右键来源弹出菜单）
 void OBSBasic::SceneItemAdded(void *data, calldata_t *params)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2382,6 +2445,7 @@ void OBSBasic::SceneItemAdded(void *data, calldata_t *params)
 			Q_ARG(OBSSceneItem, OBSSceneItem(item)));
 }
 
+// xzm_@_场景-移除item
 void OBSBasic::SceneItemRemoved(void *data, calldata_t *params)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2392,6 +2456,7 @@ void OBSBasic::SceneItemRemoved(void *data, calldata_t *params)
 			Q_ARG(OBSSceneItem, OBSSceneItem(item)));
 }
 
+// xzm_@_场景-item别选中
 void OBSBasic::SceneItemSelected(void *data, calldata_t *params)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2404,6 +2469,7 @@ void OBSBasic::SceneItemSelected(void *data, calldata_t *params)
 			Q_ARG(bool, true));
 }
 
+// xzm_@_场景-item未被选中
 void OBSBasic::SceneItemDeselected(void *data, calldata_t *params)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2416,6 +2482,7 @@ void OBSBasic::SceneItemDeselected(void *data, calldata_t *params)
 			Q_ARG(bool, false));
 }
 
+// xzm_@_来源-加载
 void OBSBasic::SourceLoaded(void *data, obs_source_t *source)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2426,6 +2493,7 @@ void OBSBasic::SourceLoaded(void *data, obs_source_t *source)
 				Q_ARG(OBSSource, OBSSource(source)));
 }
 
+// xzm_@_来源-item被移除
 void OBSBasic::SourceRemoved(void *data, calldata_t *params)
 {
 	obs_source_t *source = (obs_source_t*)calldata_ptr(params, "source");
@@ -2436,6 +2504,7 @@ void OBSBasic::SourceRemoved(void *data, calldata_t *params)
 				Q_ARG(OBSSource, OBSSource(source)));
 }
 
+// xzm_@_来源-item被激活
 void OBSBasic::SourceActivated(void *data, calldata_t *params)
 {
 	obs_source_t *source = (obs_source_t*)calldata_ptr(params, "source");
@@ -2447,6 +2516,7 @@ void OBSBasic::SourceActivated(void *data, calldata_t *params)
 				Q_ARG(OBSSource, OBSSource(source)));
 }
 
+// xzm_@_来源-item失去激活
 void OBSBasic::SourceDeactivated(void *data, calldata_t *params)
 {
 	obs_source_t *source = (obs_source_t*)calldata_ptr(params, "source");
@@ -2458,6 +2528,7 @@ void OBSBasic::SourceDeactivated(void *data, calldata_t *params)
 				Q_ARG(OBSSource, OBSSource(source)));
 }
 
+// xzm_@_来源-item重命名--item重命名完事后，回车
 void OBSBasic::SourceRenamed(void *data, calldata_t *params)
 {
 	const char *newName  = calldata_string(params, "new_name");
@@ -2471,6 +2542,7 @@ void OBSBasic::SourceRenamed(void *data, calldata_t *params)
 	blog(LOG_INFO, "Source '%s' renamed to '%s'", prevName, newName);
 }
 
+// xzm_@_home_时刻在刷新
 void OBSBasic::DrawBackdrop(float cx, float cy)
 {
 	if (!box)
@@ -2500,6 +2572,7 @@ void OBSBasic::DrawBackdrop(float cx, float cy)
 	gs_load_vertexbuffer(nullptr);
 }
 
+// xzm_@_home_时刻在刷新
 void OBSBasic::RenderMain(void *data, uint32_t cx, uint32_t cy)
 {
 	OBSBasic *window = static_cast<OBSBasic*>(data);
@@ -2556,6 +2629,7 @@ void OBSBasic::RenderMain(void *data, uint32_t cx, uint32_t cy)
 
 /* Main class functions */
 
+// xzm_@_home_创建rtmp公共组件服务
 obs_service_t *OBSBasic::GetService()
 {
 	if (!service) {
@@ -2566,12 +2640,14 @@ obs_service_t *OBSBasic::GetService()
 	return service;
 }
 
+// xzm_@_home_设置串流服务器地址
 void OBSBasic::SetService(obs_service_t *newService)
 {
 	if (newService)
 		service = newService;
 }
 
+// xzm_@_home_流激活
 bool OBSBasic::StreamingActive() const
 {
 	if (!outputHandler)
@@ -2753,6 +2829,7 @@ void OBSBasic::ResetAudioDevice(const char *sourceId, const char *deviceId,
 	}
 }
 
+// xzm_@_home_窗口大小改变
 void OBSBasic::ResizePreview(uint32_t cx, uint32_t cy)
 {
 	QSize  targetSize;
@@ -2809,6 +2886,7 @@ void OBSBasic::CloseDialogs()
 	}
 }
 
+// xzm_@_home_双击托盘图标
 void OBSBasic::EnumDialogs()
 {
 	visDialogs.clear();
@@ -2869,6 +2947,7 @@ void OBSBasic::ClearSceneData()
 	blog(LOG_INFO, "------------------------------------------------");
 }
 
+// xzm_@_home_退出所发生的事情
 void OBSBasic::closeEvent(QCloseEvent *event)
 {
 	if (isVisible())
@@ -2914,6 +2993,7 @@ void OBSBasic::closeEvent(QCloseEvent *event)
 	ClearSceneData();
 }
 
+// xzm_@_home_时刻在刷新
 void OBSBasic::changeEvent(QEvent *event)
 {
 	if (event->type() == QEvent::WindowStateChange &&
@@ -2925,6 +3005,7 @@ void OBSBasic::changeEvent(QEvent *event)
 	}
 }
 
+// xzm_@_home_[系统菜单]显示录像
 void OBSBasic::on_actionShow_Recordings_triggered()
 {
 	const char *mode = config_get_string(basicConfig, "Output", "Mode");
@@ -2934,6 +3015,7 @@ void OBSBasic::on_actionShow_Recordings_triggered()
 	QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
+// xzm_@_home_[系统菜单]转封装录像
 void OBSBasic::on_actionRemux_triggered()
 {
 	const char *mode = config_get_string(basicConfig, "Output", "Mode");
@@ -2944,6 +3026,7 @@ void OBSBasic::on_actionRemux_triggered()
 	remux.exec();
 }
 
+// xzm_@_激活设置界面
 void OBSBasic::on_action_Settings_triggered()
 {
 	OBSBasicSettings settings(this);
@@ -2951,6 +3034,7 @@ void OBSBasic::on_action_Settings_triggered()
 	SystemTray(false);
 }
 
+// xzm_@_home_[系统菜单] --高级音频属性
 void OBSBasic::on_actionAdvAudioProperties_triggered()
 {
 	if (advAudioWindow != nullptr) {
@@ -2971,11 +3055,13 @@ void OBSBasic::on_advAudioProps_clicked()
 	on_actionAdvAudioProperties_triggered();
 }
 
+// xzm_@_home_[系统菜单] --高级音频属性
 void OBSBasic::on_advAudioProps_destroyed()
 {
 	advAudioWindow = nullptr;
 }
 
+// xzm_@_home_移除场景item时触发该事件
 void OBSBasic::on_scenes_currentItemChanged(QListWidgetItem *current,
 		QListWidgetItem *prev)
 {
@@ -2996,6 +3082,7 @@ void OBSBasic::on_scenes_currentItemChanged(QListWidgetItem *current,
 	UNUSED_PARAMETER(prev);
 }
 
+// xzm_@_home_[场景]-重命名
 void OBSBasic::EditSceneName()
 {
 	QListWidgetItem *item = ui->scenes->currentItem();
@@ -3006,6 +3093,7 @@ void OBSBasic::EditSceneName()
 	item->setFlags(flags);
 }
 
+// xzm_@_home_鼠标右键场景第二步
 static void AddProjectorMenuMonitors(QMenu *parent, QObject *target,
 		const char *slot)
 {
@@ -3026,6 +3114,7 @@ static void AddProjectorMenuMonitors(QMenu *parent, QObject *target,
 	}
 }
 
+// xzm_@_home_场景【自定义上下文菜单】被请求(鼠标右键场景第一步)
 void OBSBasic::on_scenes_customContextMenuRequested(const QPoint &pos)
 {
 	QListWidgetItem *item = ui->scenes->itemAt(pos);
@@ -3071,6 +3160,7 @@ void OBSBasic::on_scenes_customContextMenuRequested(const QPoint &pos)
 	popup.exec(QCursor::pos());
 }
 
+// xzm_@_home_[场景]-右键添加触发该事件
 void OBSBasic::on_actionAddScene_triggered()
 {
 	string name;
@@ -3118,6 +3208,7 @@ void OBSBasic::on_actionAddScene_triggered()
 	}
 }
 
+// xzm_@_home_删除场景的item
 void OBSBasic::on_actionRemoveScene_triggered()
 {
 	OBSScene     scene  = GetCurrentScene();
@@ -3168,6 +3259,7 @@ void OBSBasic::MoveSceneToBottom()
 			ui->scenes->count() - 1);
 }
 
+// xzm_@_home_[来源]--item变化则，触发该事件
 void OBSBasic::on_sources_itemSelectionChanged()
 {
 	SignalBlocker sourcesSignalBlocker(ui->sources);
@@ -3193,6 +3285,7 @@ void OBSBasic::on_sources_itemSelectionChanged()
 	}, static_cast<void*>(&updateItemSelection));
 }
 
+// xzm_@_home_[来源]--item右键重命名
 void OBSBasic::EditSceneItemName()
 {
 	QListWidgetItem *item = GetTopSelectedSourceItem();
@@ -3282,6 +3375,7 @@ void OBSBasic::SetScaleFilter()
 	obs_sceneitem_set_scale_filter(sceneItem, mode);
 }
 
+// xzm_@_home_鼠标右键来源第六步--增加过滤菜单
 QMenu *OBSBasic::AddScaleFilteringMenu(obs_sceneitem_t *item)
 {
 	QMenu *menu = new QMenu(QTStr("ScaleFiltering"));
@@ -3305,6 +3399,7 @@ QMenu *OBSBasic::AddScaleFilteringMenu(obs_sceneitem_t *item)
 	return menu;
 }
 
+// xzm_@_home_鼠标右键来源item第二步--创建弹出菜单
 void OBSBasic::CreateSourcePopupMenu(QListWidgetItem *item, bool preview)
 {
 	QMenu popup(this);
@@ -3373,6 +3468,7 @@ void OBSBasic::CreateSourcePopupMenu(QListWidgetItem *item, bool preview)
 		popup.addMenu(sourceProjector);
 		popup.addSeparator();
 
+		// xzm_@_当preview窗口获取焦点时，右键单击弹出的菜单会出现【交互】子菜单
 		action = popup.addAction(QTStr("Interact"), this,
 				SLOT(on_actionInteract_triggered()));
 
@@ -3388,6 +3484,7 @@ void OBSBasic::CreateSourcePopupMenu(QListWidgetItem *item, bool preview)
 	popup.exec(QCursor::pos());
 }
 
+// xzm_@_home_来源【自定义上下文菜单】被请求（鼠标右键来源菜单）
 void OBSBasic::on_sources_customContextMenuRequested(const QPoint &pos)
 {
 	if (ui->scenes->count())
@@ -3405,10 +3502,13 @@ void OBSBasic::on_sources_itemDoubleClicked(QListWidgetItem *witem)
 	if (source)
 		CreatePropertiesWindow(source);
 }
-
+#include <QDebug>
+// xzm_@_home_添加资源(图像、场景、媒体源、显示器捕获、游戏捕获、窗口捕获、色源、视频捕获设备、音频输入捕获、音频输出捕获)
 void OBSBasic::AddSource(const char *id)
 {
 	if (id && *id) {
+		blog(LOG_DEBUG, "%s, xzmDebugLog文件 %s 行 %d\n",id, __FILE__, __LINE__);
+		
 		OBSBasicSourceSelect sourceSelect(this, id);
 		sourceSelect.exec();
 		if (sourceSelect.newSource)
@@ -3416,6 +3516,7 @@ void OBSBasic::AddSource(const char *id)
 	}
 }
 
+// xzm_@_home_鼠标右键来源菜单第三部--加载菜单
 QMenu *OBSBasic::CreateAddSourcePopupMenu()
 {
 	const char *type;
@@ -3482,6 +3583,7 @@ QMenu *OBSBasic::CreateAddSourcePopupMenu()
 	return popup;
 }
 
+// xzm_@_home_[来源]--添加-媒体源（右键来源弹出菜单）
 void OBSBasic::AddSourceFromAction()
 {
 	QAction *action = qobject_cast<QAction*>(sender());
@@ -3511,6 +3613,7 @@ void OBSBasic::on_actionAddSource_triggered()
 	AddSourcePopupMenu(QCursor::pos());
 }
 
+// xzm_@_home_[来源]--删除item
 void OBSBasic::on_actionRemoveSource_triggered()
 {
 	vector<OBSSceneItem> items;
@@ -3569,6 +3672,7 @@ void OBSBasic::on_actionInteract_triggered()
 		CreateInteractionWindow(source);
 }
 
+// xzm_@_home_[来源]--item属性
 void OBSBasic::on_actionSourceProperties_triggered()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
@@ -3590,30 +3694,35 @@ void OBSBasic::on_actionSourceDown_triggered()
 	obs_sceneitem_set_order(item, OBS_ORDER_MOVE_DOWN);
 }
 
+// xzm_@_home_[系统菜单]排序--上移
 void OBSBasic::on_actionMoveUp_triggered()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
 	obs_sceneitem_set_order(item, OBS_ORDER_MOVE_UP);
 }
 
+// xzm_@_home_[系统菜单]排序--下移
 void OBSBasic::on_actionMoveDown_triggered()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
 	obs_sceneitem_set_order(item, OBS_ORDER_MOVE_DOWN);
 }
 
+// xzm_@_home_[系统菜单]排序--移至顶部
 void OBSBasic::on_actionMoveToTop_triggered()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
 	obs_sceneitem_set_order(item, OBS_ORDER_MOVE_TOP);
 }
 
+// xzm_@_home_[系统菜单]排序--移至底部
 void OBSBasic::on_actionMoveToBottom_triggered()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
 	obs_sceneitem_set_order(item, OBS_ORDER_MOVE_BOTTOM);
 }
 
+// xzm_@_home_读取日志文件
 static BPtr<char> ReadLogFile(const char *log)
 {
 	char logDir[512];
@@ -3631,6 +3740,7 @@ static BPtr<char> ReadLogFile(const char *log)
 	return file;
 }
 
+// xzm_@_home_上传日志文件
 void OBSBasic::UploadLog(const char *file)
 {
 	BPtr<char> fileString{ReadLogFile(file)};
@@ -3684,6 +3794,7 @@ void OBSBasic::UploadLog(const char *file)
 	logUploadThread->start();
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--显示日志文件
 void OBSBasic::on_actionShowLogs_triggered()
 {
 	char logDir[512];
@@ -3694,16 +3805,19 @@ void OBSBasic::on_actionShowLogs_triggered()
 	QDesktopServices::openUrl(url);
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--上传当前日志文件
 void OBSBasic::on_actionUploadCurrentLog_triggered()
 {
 	UploadLog(App()->GetCurrentLog());
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--上传最后一个日志文件
 void OBSBasic::on_actionUploadLastLog_triggered()
 {
 	UploadLog(App()->GetLastLog());
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--查看当前日志文件
 void OBSBasic::on_actionViewCurrentLog_triggered()
 {
 	char logDir[512];
@@ -3720,11 +3834,13 @@ void OBSBasic::on_actionViewCurrentLog_triggered()
 	QDesktopServices::openUrl(url);
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--检查升级
 void OBSBasic::on_actionCheckForUpdates_triggered()
 {
 	CheckForUpdates(true);
 }
 
+// xzm_@_home_日志上传完成
 void OBSBasic::logUploadFinished(const QString &text, const QString &error)
 {
 	ui->menuLogFiles->setEnabled(true);
@@ -3744,6 +3860,7 @@ void OBSBasic::logUploadFinished(const QString &text, const QString &error)
 	logDialog.exec();
 }
 
+// xzm_@_home_[场景]-重命名
 static void RenameListItem(OBSBasic *parent, QListWidget *listWidget,
 		obs_source_t *source, const string &name)
 {
@@ -3774,6 +3891,7 @@ static void RenameListItem(OBSBasic *parent, QListWidget *listWidget,
 	}
 }
 
+// xzm_@_home_[场景]-重命名
 void OBSBasic::SceneNameEdited(QWidget *editor,
 		QAbstractItemDelegate::EndEditHint endHint)
 {
@@ -3793,6 +3911,7 @@ void OBSBasic::SceneNameEdited(QWidget *editor,
 	UNUSED_PARAMETER(endHint);
 }
 
+// xzm_@_home_[来源]--item右键重命名
 void OBSBasic::SceneItemNameEdited(QWidget *editor,
 		QAbstractItemDelegate::EndEditHint endHint)
 {
@@ -3813,6 +3932,7 @@ void OBSBasic::SceneItemNameEdited(QWidget *editor,
 	UNUSED_PARAMETER(endHint);
 }
 
+// xzm_@_home_[来源]--item滤镜
 void OBSBasic::OpenFilters()
 {
 	OBSSceneItem item = GetCurrentSceneItem();
@@ -3842,6 +3962,7 @@ void OBSBasic::OpenSceneFilters()
 #define STREAMING_STOP \
 	"==== Streaming Stop ================================================"
 
+// xzm_@_home_开始串流--开始串流
 void OBSBasic::StartStreaming()
 {
 	if (outputHandler->StreamingActive())
@@ -3887,6 +4008,7 @@ void OBSBasic::StartStreaming()
 }
 
 #ifdef _WIN32
+// xzm_@_home_
 static inline void UpdateProcessPriority()
 {
 	const char *priority = config_get_string(App()->GlobalConfig(),
@@ -3895,6 +4017,7 @@ static inline void UpdateProcessPriority()
 		SetProcessPriority(priority);
 }
 
+// xzm_@_home_停止录制-清除线程安全属性
 static inline void ClearProcessPriority()
 {
 	const char *priority = config_get_string(App()->GlobalConfig(),
@@ -3907,6 +4030,7 @@ static inline void ClearProcessPriority()
 #define ClearProcessPriority() do {} while(false)
 #endif
 
+// xzm_@_home_
 inline void OBSBasic::OnActivate()
 {
 	if (ui->profileMenu->isEnabled()) {
@@ -3919,6 +4043,7 @@ inline void OBSBasic::OnActivate()
 	}
 }
 
+// xzm_@_home_停止录制-2--停止
 inline void OBSBasic::OnDeactivate()
 {
 	if (!outputHandler->Active() && !ui->profileMenu->isEnabled()) {
@@ -3931,6 +4056,7 @@ inline void OBSBasic::OnDeactivate()
 	}
 }
 
+// xzm_@_home_开始串流--(已配置服务器地址)2--停止串流
 void OBSBasic::StopStreaming()
 {
 	SaveProject();
@@ -4027,6 +4153,7 @@ void OBSBasic::StreamDelayStopping(int sec)
 	ui->statusbar->StreamDelayStopping(sec);
 }
 
+// xzm_@_home_开始串流--(已配置服务器地址)1
 void OBSBasic::StreamingStart()
 {
 	ui->streamButton->setText(QTStr("Basic.Main.StopStreaming"));
@@ -4046,6 +4173,7 @@ void OBSBasic::StreamingStart()
 	blog(LOG_INFO, STREAMING_START);
 }
 
+// xzm_@_home_开始串流--(已配置服务器地址)3--串流停止
 void OBSBasic::StreamStopping()
 {
 	ui->streamButton->setText(QTStr("Basic.Main.StoppingStreaming"));
@@ -4058,37 +4186,38 @@ void OBSBasic::StreamStopping()
 		api->on_event(OBS_FRONTEND_EVENT_STREAMING_STOPPING);
 }
 
+// xzm_@_home_开始串流--串流停止
 void OBSBasic::StreamingStop(int code)
 {
 	const char *errorMessage;
 
 	switch (code) {
-	case OBS_OUTPUT_BAD_PATH:
+	case OBS_OUTPUT_BAD_PATH:// 无效的路径或URL。请检查您的设置以确认它们是有效的。
 		errorMessage = Str("Output.ConnectFail.BadPath");
 		break;
 
-	case OBS_OUTPUT_CONNECT_FAILED:
+	case OBS_OUTPUT_CONNECT_FAILED:// 无法连接到服务器
 		errorMessage = Str("Output.ConnectFail.ConnectFailed");
 		break;
 
-	case OBS_OUTPUT_INVALID_STREAM:
+	case OBS_OUTPUT_INVALID_STREAM:// 无法访问指定的频道或流密钥, 请仔细检查您的密钥流.  如果它是正确的, 有可能是连接到服务器时出现问题.
 		errorMessage = Str("Output.ConnectFail.InvalidStream");
 		break;
 
 	default:
-	case OBS_OUTPUT_ERROR:
+	case OBS_OUTPUT_ERROR:// 试图连接到服务器时出现意外的错误。详细信息记录在日志文件中。
 		errorMessage = Str("Output.ConnectFail.Error");
 		break;
 
 	case OBS_OUTPUT_DISCONNECTED:
 		/* doesn't happen if output is set to reconnect.  note that
 		 * reconnects are handled in the output, not in the UI */
-		errorMessage = Str("Output.ConnectFail.Disconnected");
+		errorMessage = Str("Output.ConnectFail.Disconnected");// 已从服务器断开。
 	}
 
 	ui->statusbar->StreamStopped();
 
-	ui->streamButton->setText(QTStr("Basic.Main.StartStreaming"));
+	ui->streamButton->setText(QTStr("Basic.Main.StartStreaming"));//开始串流
 	ui->streamButton->setEnabled(true);
 
 	if (sysTrayStream) {
@@ -4106,7 +4235,7 @@ void OBSBasic::StreamingStop(int code)
 
 	if (code != OBS_OUTPUT_SUCCESS && isVisible()) {
 		QMessageBox::information(this,
-				QTStr("Output.ConnectFail.Title"),
+				QTStr("Output.ConnectFail.Title"),//连接失败
 				QT_UTF8(errorMessage));
 	} else if (code != OBS_OUTPUT_SUCCESS && !isVisible()) {
 		SysTrayNotify(QT_UTF8(errorMessage), QSystemTrayIcon::Warning);
@@ -4119,6 +4248,7 @@ void OBSBasic::StreamingStop(int code)
 	}
 }
 
+// xzm_@_home_开始录制--开始录制
 void OBSBasic::StartRecording()
 {
 	if (outputHandler->RecordingActive())
@@ -4131,6 +4261,7 @@ void OBSBasic::StartRecording()
 	outputHandler->StartRecording();
 }
 
+// xzm_@_home_停止录制-录制停止
 void OBSBasic::RecordStopping()
 {
 	ui->recordButton->setText(QTStr("Basic.Main.StoppingRecording"));
@@ -4143,6 +4274,7 @@ void OBSBasic::RecordStopping()
 		api->on_event(OBS_FRONTEND_EVENT_RECORDING_STOPPING);
 }
 
+// xzm_@_home_停止录制-1
 void OBSBasic::StopRecording()
 {
 	SaveProject();
@@ -4153,6 +4285,7 @@ void OBSBasic::StopRecording()
 	OnDeactivate();
 }
 
+// xzm_@_home_开始录制--录制开始
 void OBSBasic::RecordingStart()
 {
 	ui->statusbar->RecordingStarted(outputHandler->fileOutput);
@@ -4170,6 +4303,7 @@ void OBSBasic::RecordingStart()
 	blog(LOG_INFO, RECORDING_START);
 }
 
+// xzm_@_home_停止录制-录制正在停止
 void OBSBasic::RecordingStop(int code)
 {
 	ui->statusbar->RecordingStopped();
@@ -4339,6 +4473,7 @@ void OBSBasic::ReplayBufferStop(int code)
 	OnDeactivate();
 }
 
+// xzm_@_home_开始串流--按钮被按下，触发该事件
 void OBSBasic::on_streamButton_clicked()
 {
 	if (outputHandler->StreamingActive()) {
@@ -4374,6 +4509,7 @@ void OBSBasic::on_streamButton_clicked()
 	}
 }
 
+// xzm_@_home_开始录制--按钮被按下，触发该事件
 void OBSBasic::on_recordButton_clicked()
 {
 	if (outputHandler->RecordingActive())
@@ -4382,17 +4518,20 @@ void OBSBasic::on_recordButton_clicked()
 		StartRecording();
 }
 
+// xzm_@_设置按钮响应事件
 void OBSBasic::on_settingsButton_clicked()
 {
 	on_action_Settings_triggered();
 }
 
+// xzm_@_home_[系统菜单]帮助--日志文件--访问OBS主页
 void OBSBasic::on_actionWebsite_triggered()
 {
 	QUrl url = QUrl("https://obsproject.com", QUrl::TolerantMode);
 	QDesktopServices::openUrl(url);
 }
 
+// xzm_@_home_[系统菜单]打开设置所在的路径
 void OBSBasic::on_actionShowSettingsFolder_triggered()
 {
 	char path[512];
@@ -4403,6 +4542,7 @@ void OBSBasic::on_actionShowSettingsFolder_triggered()
 	QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
+// xzm_@_home_[系统菜单]打开配置文件所在的路径
 void OBSBasic::on_actionShowProfileFolder_triggered()
 {
 	char path[512];
@@ -4422,6 +4562,7 @@ QListWidgetItem *OBSBasic::GetTopSelectedSourceItem()
 	return topItem;
 }
 
+// xzm_@_预览窗口【自定义上下文菜单】被请求
 void OBSBasic::on_preview_customContextMenuRequested(const QPoint &pos)
 {
 	CreateSourcePopupMenu(GetTopSelectedSourceItem(), true);
@@ -4429,6 +4570,7 @@ void OBSBasic::on_preview_customContextMenuRequested(const QPoint &pos)
 	UNUSED_PARAMETER(pos);
 }
 
+// xzm_@_预览禁用标签窗口【自定义上下文菜单】被请求
 void OBSBasic::on_previewDisabledLabel_customContextMenuRequested(
 		const QPoint &pos)
 {
@@ -4451,6 +4593,7 @@ void OBSBasic::on_previewDisabledLabel_customContextMenuRequested(
 	UNUSED_PARAMETER(pos);
 }
 
+// xzm_@_home_[系统菜单]窗口置顶
 void OBSBasic::on_actionAlwaysOnTop_triggered()
 {
 	CloseDialogs();
@@ -4463,6 +4606,7 @@ void OBSBasic::on_actionAlwaysOnTop_triggered()
 			Qt::QueuedConnection);
 }
 
+// xzm_@_home_[系统菜单]窗口置顶
 void OBSBasic::ToggleAlwaysOnTop()
 {
 	bool isAlwaysOnTop = IsAlwaysOnTop(this);
@@ -4544,6 +4688,7 @@ config_t *OBSBasic::Config() const
 	return basicConfig;
 }
 
+// xzm_@_home_[系统菜单]变换--编辑变换
 void OBSBasic::on_actionEditTransform_triggered()
 {
 	if (transformWindow)
@@ -4557,6 +4702,7 @@ void OBSBasic::on_actionEditTransform_triggered()
 static obs_transform_info copiedTransformInfo;
 static obs_sceneitem_crop copiedCropInfo;
 
+// xzm_@_home_[系统菜单]变换--复制变换
 void OBSBasic::on_actionCopyTransform_triggered()
 {
 	auto func = [](obs_scene_t *scene, obs_sceneitem_t *item, void *param)
@@ -4578,6 +4724,7 @@ void OBSBasic::on_actionCopyTransform_triggered()
 	ui->actionPasteTransform->setEnabled(true);
 }
 
+// xzm_@_home_[系统菜单]变换--粘贴变换
 void OBSBasic::on_actionPasteTransform_triggered()
 {
 	auto func = [](obs_scene_t *scene, obs_sceneitem_t *item, void *param)
@@ -4598,6 +4745,7 @@ void OBSBasic::on_actionPasteTransform_triggered()
 	obs_scene_enum_items(GetCurrentScene(), func, nullptr);
 }
 
+// xzm_@_home_[系统菜单]变换--重置变换
 void OBSBasic::on_actionResetTransform_triggered()
 {
 	auto func = [] (obs_scene_t *scene, obs_sceneitem_t *item, void *param)
@@ -4630,6 +4778,7 @@ void OBSBasic::on_actionResetTransform_triggered()
 	obs_scene_enum_items(GetCurrentScene(), func, nullptr);
 }
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 static void GetItemBox(obs_sceneitem_t *item, vec3 &tl, vec3 &br)
 {
 	matrix4 boxTransform;
@@ -4653,6 +4802,7 @@ static void GetItemBox(obs_sceneitem_t *item, vec3 &tl, vec3 &br)
 	GetMinPos(1.0f, 1.0f);
 }
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 static vec3 GetItemTL(obs_sceneitem_t *item)
 {
 	vec3 tl, br;
@@ -4660,6 +4810,7 @@ static vec3 GetItemTL(obs_sceneitem_t *item)
 	return tl;
 }
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 static void SetItemTL(obs_sceneitem_t *item, const vec3 &tl)
 {
 	vec3 newTL;
@@ -4672,6 +4823,7 @@ static void SetItemTL(obs_sceneitem_t *item, const vec3 &tl)
 	obs_sceneitem_set_pos(item, &pos);
 }
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 static bool RotateSelectedSources(obs_scene_t *scene, obs_sceneitem_t *item,
 		void *param)
 {
@@ -4694,24 +4846,28 @@ static bool RotateSelectedSources(obs_scene_t *scene, obs_sceneitem_t *item,
 	return true;
 };
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 void OBSBasic::on_actionRotate90CW_triggered()
 {
 	float f90CW = 90.0f;
 	obs_scene_enum_items(GetCurrentScene(), RotateSelectedSources, &f90CW);
 }
 
+// xzm_@_home_[系统菜单]变换--逆时针旋转90度
 void OBSBasic::on_actionRotate90CCW_triggered()
 {
 	float f90CCW = -90.0f;
 	obs_scene_enum_items(GetCurrentScene(), RotateSelectedSources, &f90CCW);
 }
 
+// xzm_@_home_[系统菜单]变换--旋转180度
 void OBSBasic::on_actionRotate180_triggered()
 {
 	float f180 = 180.0f;
 	obs_scene_enum_items(GetCurrentScene(), RotateSelectedSources, &f180);
 }
 
+// xzm_@_home_[系统菜单]变换--水平翻转
 static bool MultiplySelectedItemScale(obs_scene_t *scene, obs_sceneitem_t *item,
 		void *param)
 {
@@ -4733,6 +4889,7 @@ static bool MultiplySelectedItemScale(obs_scene_t *scene, obs_sceneitem_t *item,
 	return true;
 }
 
+// xzm_@_home_[系统菜单]变换--水平翻转
 void OBSBasic::on_actionFlipHorizontal_triggered()
 {
 	vec2 scale;
@@ -4749,6 +4906,7 @@ void OBSBasic::on_actionFlipVertical_triggered()
 			&scale);
 }
 
+// xzm_@_home_[系统菜单]变换--比例适配屏幕
 static bool CenterAlignSelectedItems(obs_scene_t *scene, obs_sceneitem_t *item,
 		void *param)
 {
@@ -4777,6 +4935,7 @@ static bool CenterAlignSelectedItems(obs_scene_t *scene, obs_sceneitem_t *item,
 	return true;
 }
 
+// xzm_@_home_[系统菜单]变换--比例适配屏幕
 void OBSBasic::on_actionFitToScreen_triggered()
 {
 	obs_bounds_type boundsType = OBS_BOUNDS_SCALE_INNER;
@@ -4784,6 +4943,7 @@ void OBSBasic::on_actionFitToScreen_triggered()
 			&boundsType);
 }
 
+// xzm_@_home_[系统菜单]变换--拉伸到全屏
 void OBSBasic::on_actionStretchToScreen_triggered()
 {
 	obs_bounds_type boundsType = OBS_BOUNDS_STRETCH;
@@ -4791,6 +4951,7 @@ void OBSBasic::on_actionStretchToScreen_triggered()
 			&boundsType);
 }
 
+// xzm_@_home_[系统菜单]变换--屏幕居中
 void OBSBasic::on_actionCenterToScreen_triggered()
 {
 	auto func = [] (obs_scene_t *scene, obs_sceneitem_t *item, void *param)
@@ -4826,6 +4987,7 @@ void OBSBasic::on_actionCenterToScreen_triggered()
 	obs_scene_enum_items(GetCurrentScene(), func, nullptr);
 }
 
+// xzm_@_home_双击托盘图标
 void OBSBasic::EnablePreviewDisplay(bool enable)
 {
 	obs_display_set_enabled(ui->preview->GetDisplay(), enable);
@@ -4881,6 +5043,7 @@ void OBSBasic::NudgeDown()     {Nudge(1,  MoveDir::Down);}
 void OBSBasic::NudgeLeft()     {Nudge(1,  MoveDir::Left);}
 void OBSBasic::NudgeRight()    {Nudge(1,  MoveDir::Right);}
 
+// xzm_@_home_全屏投影仪(源)
 void OBSBasic::OpenProjector(obs_source_t *source, int monitor)
 {
 	/* seriously?  10 monitors? */
@@ -4917,6 +5080,7 @@ void OBSBasic::OpenPreviewProjector()
 	OpenProjector(nullptr, monitor);
 }
 
+// xzm_@_home_全屏投影仪(源)
 void OBSBasic::OpenSourceProjector()
 {
 	int monitor = sender()->property("monitor").toInt();
@@ -4967,6 +5131,7 @@ void OBSBasic::OpenSavedProjectors()
 	}
 }
 
+// xzm_@_home_全屏投影仪(源)
 void OBSBasic::RemoveSavedProjectors(int monitor)
 {
 	previewProjectorArray.at((size_t)monitor) = 0;
@@ -5020,6 +5185,7 @@ int OBSBasic::GetProfilePath(char *path, size_t size, const char *file) const
 	return snprintf(path, size, "%s/%s/%s", profiles_path, profile, file);
 }
 
+// xzm_@_home_[系统菜单]--查看--场景过度
 void OBSBasic::on_toggleSceneTransitions_toggled(bool visible)
 {
 	ui->sceneTransitionsLabel->setVisible(visible);
@@ -5029,6 +5195,7 @@ void OBSBasic::on_toggleSceneTransitions_toggled(bool visible)
 			"ShowTransitions", visible);
 }
 
+// xzm_@_home_[系统菜单]--工具栏--列表框
 void OBSBasic::on_toggleListboxToolbars_toggled(bool visible)
 {
 	ui->sourcesToolbar->setVisible(visible);
@@ -5038,6 +5205,7 @@ void OBSBasic::on_toggleListboxToolbars_toggled(bool visible)
 			"ShowListboxToolbars", visible);
 }
 
+// xzm_@_home_[系统菜单]--查看--状态栏
 void OBSBasic::on_toggleStatusBar_toggled(bool visible)
 {
 	ui->statusbar->setVisible(visible);
@@ -5046,12 +5214,14 @@ void OBSBasic::on_toggleStatusBar_toggled(bool visible)
 			"ShowStatusBar", visible);
 }
 
+// xzm_@_home_[系统菜单]锁定预览
 void OBSBasic::on_actionLockPreview_triggered()
 {
 	ui->preview->ToggleLocked();
 	ui->actionLockPreview->setChecked(ui->preview->Locked());
 }
 
+// xzm_@_home_[系统菜单] --预览缩放--刚移动到菜单上
 void OBSBasic::on_scalingMenu_aboutToShow()
 {
 	obs_video_info ovi;
@@ -5072,6 +5242,7 @@ void OBSBasic::on_scalingMenu_aboutToShow()
 	UpdatePreviewScalingMenu();
 }
 
+// xzm_@_home_[系统菜单] --预览缩放--缩放至窗口
 void OBSBasic::on_actionScaleWindow_triggered()
 {
 	ui->preview->SetScaling(ScalingMode::Window);
@@ -5079,18 +5250,21 @@ void OBSBasic::on_actionScaleWindow_triggered()
 	emit ui->preview->DisplayResized();
 }
 
+// xzm_@_home_[系统菜单] --预览缩放--背景1920x
 void OBSBasic::on_actionScaleCanvas_triggered()
 {
 	ui->preview->SetScaling(ScalingMode::Canvas);
 	emit ui->preview->DisplayResized();
 }
 
+// xzm_@_home_[系统菜单] --预览缩放--输出1280x
 void OBSBasic::on_actionScaleOutput_triggered()
 {
 	ui->preview->SetScaling(ScalingMode::Output);
 	emit ui->preview->DisplayResized();
 }
 
+// xzm_@_home_双击托盘图标
 void OBSBasic::SetShowing(bool showing)
 {
 	if (!showing && isVisible()) {
@@ -5146,6 +5320,7 @@ void OBSBasic::SetShowing(bool showing)
 	}
 }
 
+// xzm_@_home_双击托盘图标
 void OBSBasic::ToggleShowHide()
 {
 	bool showing = isVisible();
@@ -5201,6 +5376,7 @@ void OBSBasic::SystemTrayInit()
 	trayIcon->setContextMenu(trayMenu);
 }
 
+// xzm_@_home_双击托盘图标
 void OBSBasic::IconActivated(QSystemTrayIcon::ActivationReason reason)
 {
 	if (reason == QSystemTrayIcon::Trigger)

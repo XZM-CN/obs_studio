@@ -55,7 +55,8 @@ class ConfigFile {
 	ConfigFile &operator=(ConfigFile const&) = delete;
 
 public:
-	inline ConfigFile() : config(NULL) {}
+	inline ConfigFile() : config(NULL) {
+	}
 	inline ConfigFile(ConfigFile &&other) : config(other.config)
 	{
 		other.config = nullptr;
@@ -82,6 +83,7 @@ public:
 	inline int Open(const char *file, config_open_type openType)
 	{
 		Close();
+		// xzm_@_打开配置文件
 		return config_open(&config, file, openType);
 	}
 

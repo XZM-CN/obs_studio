@@ -1,3 +1,27 @@
+//////////////////////////////////基本信息///////////////////////////////////////////////////////  
+// ><免责声明 ><  Copyright (c) 2017-2017 by Xie Zhimin All Rights Reserved  
+// ><创建日期 ><  2017/03/21  
+// ><创建时间 ><  2017年:03月:21日   18时:01分:00秒  
+// ><文件     ><  platform.h  
+// ><文件路径 ><  D:\newSvnCode\OBS\trunk\obs_studio\libobs\util  
+// ><隶属工程><   obs-studio  
+// ><当前用户 ><  Administrator  
+// ><作者     ><  Open Broadcaster Software   
+// ><出处     >< 《 https://obsproject.com/ 》  
+// ><目的     >< 【】  
+// ><设计技术 ><   
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+// ><         ><  4.  
+//////////////////////////////////迭代修改///////////////////////////////////////////////////////  
+// ><作者     ><  xzm  
+// ><修改日期 ><  2017年:03月:21日   18时:01分:00秒  
+// ><原因     ><    
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Copyright (c) 2013 Hugh Bailey <obs.jim@gmail.com>
  *
@@ -76,6 +100,9 @@ EXPORT size_t os_wcs_to_utf8_ptr(const wchar_t *str, size_t len, char **pstr);
 
 EXPORT size_t os_utf8_to_mbs_ptr(const char *str, size_t len, char **pstr);
 EXPORT size_t os_mbs_to_utf8_ptr(const char *str, size_t len, char **pstr);
+
+// xzm_@_追加一个输出函数
+EXPORT wchar_t* characterSet_char2wchar(char* str);
 
 EXPORT double os_strtod(const char *str);
 EXPORT int os_dtostr(double value, char *dst, size_t size);

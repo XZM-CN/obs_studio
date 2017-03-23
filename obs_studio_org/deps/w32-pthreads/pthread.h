@@ -711,22 +711,37 @@ struct pthread_once_t_
 #define PTHREAD_SPINLOCK_INITIALIZER ((pthread_spinlock_t)(size_t) -1)
 
 
-/*
- * Mutex types.
+ /*
+  * Mutex types.xzm_@_互斥锁属性
  */
 enum
 {
-  /* Compatibility with LinuxThreads */
-  PTHREAD_MUTEX_FAST_NP,
-  PTHREAD_MUTEX_RECURSIVE_NP,
-  PTHREAD_MUTEX_ERRORCHECK_NP,
-  PTHREAD_MUTEX_TIMED_NP = PTHREAD_MUTEX_FAST_NP,
-  PTHREAD_MUTEX_ADAPTIVE_NP = PTHREAD_MUTEX_FAST_NP,
-  /* For compatibility with POSIX */
-  PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_FAST_NP,
-  PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP,
-  PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP,
-  PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL
+	/* Compatibility with LinuxThreads */
+	PTHREAD_MUTEX_FAST_NP,
+	PTHREAD_MUTEX_RECURSIVE_NP,// xzm_@_嵌套锁，允许同一个线程对同一个锁成功获得多次，并通过多次unlock解锁。如果是不同线程请求，则在加锁线程解锁时重新竞争。
+	PTHREAD_MUTEX_ERRORCHECK_NP,// xzm_@_检错锁，如果同一个线程请求同一个锁，则返回EDEADLK，否则与PTHREAD_MUTEX_TIMED_NP类型动作相同。这样就保证当不允许多次加锁时不会出现最简单情况下的死锁。
+	PTHREAD_MUTEX_TIMED_NP = PTHREAD_MUTEX_FAST_NP,// xzm_@_这是缺省值，也就是普通锁。当一个线程加锁以后，其余请求锁的线程将形成一个等待队列，并在解锁后按优先级获得锁。这种锁策略保证了资源分配的公平性。
+	PTHREAD_MUTEX_ADAPTIVE_NP = PTHREAD_MUTEX_FAST_NP,// xzm_@_适应锁，动作最简单的锁类型，仅等待解锁后重新竞争
+	/* For compatibility with POSIX */
+	/*xzm_@_此类型的互斥锁不会检测死锁。如果线程在不首先解除互斥锁的情况下尝试重新锁定该互斥锁，
+	则会产生死锁。尝试解除由其他线程锁定的互斥锁会产生不确定的行为。如果尝试解除锁定的互斥
+	锁未锁定，则会产生不确定的行为。*/
+	PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_FAST_NP,
+	/*xzm_@_此类型的互斥锁可提供错误检查。如果线程在不首先解除锁定互斥锁的情况下尝试重新锁定该
+	互斥锁，则会返回错误。如果线程尝试解除锁定的互斥锁已经由其他线程锁定，则会返回错误。
+	如果线程尝试解除锁定的互斥锁未锁定，则会返回错误。*/
+	PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP,
+	/*xzm_@_如果线程在不首先解除锁定互斥锁的情况下尝试重新锁定该互斥锁，则可成功锁定该互斥锁。
+	与 PTHREAD_MUTEX_NORMAL 类型的互斥锁不同，对此类型互斥锁进行重新锁定时不会产生死锁
+	情况。多次锁定互斥锁需要进行相同次数的解除锁定才可以释放该锁，然后其他线程才能获取
+	该互斥锁。如果线程尝试解除锁定的互斥锁已经由其他线程锁定，则会返回错误。 如果线程尝试
+	解除锁定的互斥锁未锁定，则会返回错误。*/
+	PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP,
+	/*xzm_@_如果尝试以递归方式锁定此类型的互斥锁，则会产生不确定的行为。对于不是由调用线程锁定
+	的此类型互斥锁，如果尝试对它解除锁定，则会产生不确定的行为。对于尚未锁定的此类型互斥锁，
+	如果尝试对它解除锁定，也会产生不确定的行为。允许在实现中将该互斥锁映射到其他互斥锁类型之一。
+	对于 Solaris 线程，PTHREAD_PROCESS_DEFAULT 会映射到 PTHREAD_PROCESS_NORMAL。*/
+	PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL
 };
 
 
@@ -996,20 +1011,21 @@ PTW32_DLLPORT void * PTW32_CDECL pthread_getspecific (pthread_key_t key);
 /*
  * Mutex Attribute Functions
  */
+// xzm_@_初始化互斥锁属性对象 http://baike.baidu.com/item/互斥锁
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_init (pthread_mutexattr_t * attr);
-
+// xzm_@_销毁互斥锁属性对象
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_destroy (pthread_mutexattr_t * attr);
-
+// xzm_@_获取互斥锁范围
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_getpshared (const pthread_mutexattr_t
                                           * attr,
                                           int *pshared);
-
+// xzm_@_设置互斥锁范围
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_setpshared (pthread_mutexattr_t * attr,
                                           int pshared);
-
+// xzm_@_设置、获取互斥锁的类型属性
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_settype (pthread_mutexattr_t * attr, int kind);
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_gettype (const pthread_mutexattr_t * attr, int *kind);
-
+// xzm_@_设置、获取互斥锁的强健属性
 PTW32_DLLPORT int PTW32_CDECL pthread_mutexattr_setrobust(
                                            pthread_mutexattr_t *attr,
                                            int robust);

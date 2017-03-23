@@ -1,3 +1,27 @@
+//////////////////////////////////基本信息///////////////////////////////////////////////////////  
+// ><免责声明 ><  Copyright (c) 2017-2017 by Xie Zhimin All Rights Reserved  
+// ><创建日期 ><  2017/03/21  
+// ><创建时间 ><  2017年:03月:21日   16时:32分:53秒  
+// ><文件     ><  obs-app.cpp  
+// ><文件路径 ><  D:\newSvnCode\OBS\trunk\obs_studio\UI  
+// ><隶属工程><   obs-studio  
+// ><当前用户 ><  Administrator  
+// ><作者     ><  Open Broadcaster Software   
+// ><出处     >< 《 https://obsproject.com/ 》  
+// ><目的     >< 【】  
+// ><设计技术 ><   
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+// ><         ><  4.  
+//////////////////////////////////迭代修改///////////////////////////////////////////////////////  
+// ><作者     ><  xzm  
+// ><修改日期 ><  2017年:03月:21日   16时:32分:53秒  
+// ><原因     ><    
+// ><         ><  1.  
+// ><         ><  2.  
+// ><         ><  3.  
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /******************************************************************************
     Copyright (C) 2013 by Hugh Bailey <obs.jim@gmail.com>
 
@@ -886,6 +910,8 @@ bool OBSApp::OBSInit()
 
 	bool licenseAccepted = config_get_bool(globalConfig, "General",
 			"LicenseAccepted");
+
+	// xzm_@_授权许可协议对话框(只有在应用程序第一次启动时才会出现)
 	OBSLicenseAgreement agreement(nullptr);
 
 	if (licenseAccepted || agreement.exec() == QDialog::Accepted) {
@@ -1244,6 +1270,7 @@ static void SaveProfilerData(const ProfilerSnapshot &snap)
 				static_cast<const char*>(path));
 }
 
+// xmz_@_程序退出的时候才会执行
 static auto ProfilerFree = [](void *)
 {
 	profiler_stop();
@@ -1265,9 +1292,11 @@ static int run_program(fstream &logFile, int argc, char *argv[])
 
 	auto profilerNameStore = CreateNameStore();
 
+	// unique_ptr是一种定义在<memory>中的智能指针(smart pointer)。
+	// 它持有对对象的独有权——两个unique_ptr不能指向一个对象，不能
+	// 进行复制操作只能进行移动操作。unique_ptr在超出作用域，即以下情况时它指向的对象会被摧毁
 	std::unique_ptr<void, decltype(ProfilerFree)>
-		prof_release(static_cast<void*>(&ProfilerFree),
-				ProfilerFree);
+		prof_release(static_cast<void*>(&ProfilerFree), ProfilerFree);
 
 	profiler_start();
 	profile_register_root(run_program_init, 0);
@@ -1359,17 +1388,20 @@ static void load_debug_privilege(void)
 	HANDLE token;
 	LUID val;
 
+	// xzm_@_OpenProcessToken  函数用来打开与进程相关联的访问令牌
+	// xzm_@_GetCurrentProcess 获取当前进程的一个伪句柄;只要当前进程需要一个进程句柄，就可以使用这个伪句柄。该句柄可以复制，但不可继承。不必调用CloseHandle函数来关闭这个句柄
 	if (!OpenProcessToken(GetCurrentProcess(), flags, &token)) {
 		return;
 	}
 
+	// xzm_@_LookupPrivilegeValue 函数查看系统权限的特权值，返回信息到一个LUID结构体里
 	if (!!LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &val)) {
 		tp.PrivilegeCount = 1;
 		tp.Privileges[0].Luid = val;
 		tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
 
-		AdjustTokenPrivileges(token, false, &tp,
-				sizeof(tp), NULL, NULL);
+		// xzm_@_AdjustTokenPrivileges 是一种函数，用于启用或禁止，指定访问令牌的特权
+		AdjustTokenPrivileges(token, false, &tp, sizeof(tp), NULL, NULL);
 	}
 
 	CloseHandle(token);
@@ -1534,6 +1566,7 @@ static void move_to_xdg(void)
 }
 #endif
 
+// xzm_@_配置ffmeg组件参数
 static bool update_ffmpeg_output(ConfigFile &config)
 {
 	if (config_has_user_value(config, "AdvOut", "FFOutputToFile"))
@@ -1668,6 +1701,7 @@ static void convert_14_2_encoder_setting(const char *encoder, const char *file)
 
 static void upgrade_settings(void)
 {
+	// C:\Users\Administrator\AppData\Roaming\obs-studio\basic\profiles
 	char path[512];
 	int pathlen = GetConfigPath(path, 512, "obs-studio/basic/profiles");
 
@@ -1683,44 +1717,45 @@ static void upgrade_settings(void)
 	struct os_dirent *ent = os_readdir(dir);
 
 	while (ent) {
-		if (ent->directory && strcmp(ent->d_name, ".") != 0 &&
-				strcmp(ent->d_name, "..") != 0) {
+		if (ent->directory && strcmp(ent->d_name, ".") != 0 && strcmp(ent->d_name, "..") != 0) {
 			strcat(path, "/");
 			strcat(path, ent->d_name);
 			strcat(path, "/basic.ini");
+			// xzm_@_输出调试信息
+			OutputDebugStringW(characterSet_char2wchar(path)); OutputDebugStringW(L"\n");
 
 			ConfigFile config;
 			int ret;
 
+			// xzm_@_打开配置文件
 			ret = config.Open(path, CONFIG_OPEN_EXISTING);
 			if (ret == CONFIG_SUCCESS) {
-				if (update_ffmpeg_output(config) ||
-				    update_reconnect(config)) {
-					config_save_safe(config, "tmp",
-							nullptr);
+				if (update_ffmpeg_output(config) || update_reconnect(config)) {
+					config_save_safe(config, "tmp", nullptr);
 				}
 			}
 
 
 			if (config) {
-				const char *sEnc = config_get_string(config,
-						"AdvOut", "Encoder");
-				const char *rEnc = config_get_string(config,
-						"AdvOut", "RecEncoder");
+				const char *sEnc = config_get_string(config, "AdvOut", "Encoder");
+				const char *rEnc = config_get_string(config, "AdvOut", "RecEncoder");
 
-				/* replace "cbr" option with "rate_control" for
-				 * each profile's encoder data */
+				/* replace "cbr" option with "rate_control" for each profile's encoder data */
 				path[pathlen] = 0;
 				strcat(path, "/");
 				strcat(path, ent->d_name);
 				strcat(path, "/recordEncoder.json");
 				convert_14_2_encoder_setting(rEnc, path);
+				// xzm_@_输出调试信息
+				OutputDebugStringW(characterSet_char2wchar(path)); OutputDebugStringW(L"\n");
 
 				path[pathlen] = 0;
 				strcat(path, "/");
 				strcat(path, ent->d_name);
 				strcat(path, "/streamEncoder.json");
 				convert_14_2_encoder_setting(sEnc, path);
+				// xzm_@_输出调试信息
+				OutputDebugStringW(characterSet_char2wchar(path)); OutputDebugStringW(L"\n");
 			}
 
 			path[pathlen] = 0;
@@ -1734,11 +1769,14 @@ static void upgrade_settings(void)
 
 int main(int argc, char *argv[])
 {
+	// xzm_@_main
+	int xzm = 6666;
 #ifndef _WIN32
 	signal(SIGPIPE, SIG_IGN);
 #endif
 
 #ifdef _WIN32
+	// xzm_@_(通过访问令牌)提升进程权限
 	load_debug_privilege();
 	base_set_crash_handler(main_crash_handler, nullptr);
 #endif
@@ -1823,7 +1861,10 @@ int main(int argc, char *argv[])
 
 	fstream logFile;
 
+	// xzm_@_初始化libcurl库
 	curl_global_init(CURL_GLOBAL_ALL);
+
+	// xzm_@_这个函数就加载各种库了
 	int ret = run_program(logFile, argc, argv);
 
 	blog(LOG_INFO, "Number of memory leaks: %ld", bnum_allocs());
