@@ -509,6 +509,18 @@
     <Filter Include="audio-monitoring">
       <UniqueIdentifier>{6C868765-33F4-3142-9DDC-D273E7EEA81C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="callback\Source Files">
+      <UniqueIdentifier>{F5F389EE-F1BD-30F1-9AB9-811B4EC92A5E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="callback\Header Files">
+      <UniqueIdentifier>{2CBFDADA-1C0A-389B-8476-4F2B2AE22BEE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="media-io\Source Files">
+      <UniqueIdentifier>{B761A250-8993-39BF-8BAB-3B61F5C29AEC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="media-io\Header Files">
+      <UniqueIdentifier>{55FB30E6-92EA-3DFF-AF6F-07D85CF9C8FD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="graphics\Source Files">
       <UniqueIdentifier>{BD9A3C6A-9E3D-3409-B4E9-D8734A7DF382}</UniqueIdentifier>
     </Filter>
@@ -521,12 +533,6 @@
     <Filter Include="audio-monitoring\Header Files">
       <UniqueIdentifier>{811F3C96-9AB8-3A83-9036-1793DCCB7E86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="callback\Source Files">
-      <UniqueIdentifier>{F5F389EE-F1BD-30F1-9AB9-811B4EC92A5E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="callback\Header Files">
-      <UniqueIdentifier>{2CBFDADA-1C0A-389B-8476-4F2B2AE22BEE}</UniqueIdentifier>
-    </Filter>
     <Filter Include="util\Source Files">
       <UniqueIdentifier>{78A6F0B4-0BE2-3741-B80F-453629E655C2}</UniqueIdentifier>
     </Filter>
@@ -538,12 +544,6 @@
     </Filter>
     <Filter Include="libobs\Header Files">
       <UniqueIdentifier>{61A08849-5FFF-3A56-8BE6-0EACF8DC3470}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="media-io\Source Files">
-      <UniqueIdentifier>{B761A250-8993-39BF-8BAB-3B61F5C29AEC}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="media-io\Header Files">
-      <UniqueIdentifier>{55FB30E6-92EA-3DFF-AF6F-07D85CF9C8FD}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

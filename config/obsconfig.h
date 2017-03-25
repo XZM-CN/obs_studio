@@ -9,7 +9,7 @@
 #define OFF 0
 #endif
 
-#define OBS_VERSION "18.0.1-8-ga810611"
+#define OBS_VERSION "0.0.1"
 #define OBS_DATA_PATH "../../data"
 #define OBS_INSTALL_PREFIX ""
 #define OBS_PLUGIN_DESTINATION "obs-plugins/32bit"

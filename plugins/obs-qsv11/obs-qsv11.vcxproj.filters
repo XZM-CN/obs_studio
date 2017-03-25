@@ -173,11 +173,11 @@
     <CustomBuild Include="D:\obs_studio\obs_studio_org\plugins\obs-qsv11\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="obs-qsv11\Source Files">
-      <UniqueIdentifier>{7F1D338A-5EF5-3048-BAAB-65D706F8CA57}</UniqueIdentifier>
+    <Filter Include="obs-qsv11">
+      <UniqueIdentifier>{EB1A063B-2A26-3459-846A-0C1841E3DD59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="obs-qsv11\Header Files">
-      <UniqueIdentifier>{084D9D82-B0CE-321C-BD98-C3CAC2F296A3}</UniqueIdentifier>
+    <Filter Include="libmfx">
+      <UniqueIdentifier>{BB941732-5AED-36A6-9838-788B912EF1A2}</UniqueIdentifier>
     </Filter>
     <Filter Include="libmfx\Source Files">
       <UniqueIdentifier>{8DA61562-DCB2-3B79-B43C-84F67106BB54}</UniqueIdentifier>
@@ -185,11 +185,11 @@
     <Filter Include="libmfx\Header Files">
       <UniqueIdentifier>{77D0CB04-DCA3-3DDA-A5C1-C9E5D7CAF383}</UniqueIdentifier>
     </Filter>
-    <Filter Include="obs-qsv11">
-      <UniqueIdentifier>{EB1A063B-2A26-3459-846A-0C1841E3DD59}</UniqueIdentifier>
+    <Filter Include="obs-qsv11\Source Files">
+      <UniqueIdentifier>{7F1D338A-5EF5-3048-BAAB-65D706F8CA57}</UniqueIdentifier>
     </Filter>
-    <Filter Include="libmfx">
-      <UniqueIdentifier>{BB941732-5AED-36A6-9838-788B912EF1A2}</UniqueIdentifier>
+    <Filter Include="obs-qsv11\Header Files">
+      <UniqueIdentifier>{084D9D82-B0CE-321C-BD98-C3CAC2F296A3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
