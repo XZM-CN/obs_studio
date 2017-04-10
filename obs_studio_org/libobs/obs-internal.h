@@ -97,12 +97,12 @@ static inline bool obs_object_valid(const void *obj, const char *f,
 /* modules */
 
 struct obs_module {
-	char *mod_name;
-	const char *file;
-	char *bin_path;
-	char *data_path;
-	void *module;
-	bool loaded;
+	char *mod_name;  // 模块的名字
+	const char *file;// 文件
+	char *bin_path;  // 执行路径
+	char *data_path; // 数据路径
+	void *module;    // 模块指针
+	bool loaded;     // 是否被加载
 
 	bool        (*load)(void);
 	void        (*unload)(void);
@@ -120,8 +120,8 @@ struct obs_module {
 extern void free_module(struct obs_module *mod);
 
 struct obs_module_path {
-	char *bin;
-	char *data;
+	char *bin; // 执行目录路径
+	char *data; // 数据
 };
 
 static inline void free_module_path(struct obs_module_path *omp)
@@ -205,8 +205,8 @@ void obs_hotkey_name_map_free(void);
 /* views */
 
 struct obs_view {
-	pthread_mutex_t                 channels_mutex;
-	obs_source_t                    *channels[MAX_CHANNELS];
+	pthread_mutex_t   channels_mutex;// 通道互斥锁
+	obs_source_t     *channels[MAX_CHANNELS];// 通道数组
 };
 
 extern bool obs_view_init(struct obs_view *view);
@@ -324,25 +324,22 @@ struct obs_core_audio {
 
 /* user sources, output channels, and displays */
 struct obs_core_data {
-	struct obs_source               *first_source;
-	struct obs_source               *first_audio_source;
-	struct obs_display              *first_display;
-	struct obs_output               *first_output;
-	struct obs_encoder              *first_encoder;
-	struct obs_service              *first_service;
+	struct obs_source    *first_source;
+	struct obs_source    *first_audio_source;
+	struct obs_display   *first_display;
+	struct obs_output    *first_output;
+	struct obs_encoder   *first_encoder;
+	struct obs_service   *first_service;
 
-	pthread_mutex_t                 sources_mutex;
-	pthread_mutex_t                 displays_mutex;
-	pthread_mutex_t                 outputs_mutex;
-	pthread_mutex_t                 encoders_mutex;
-	pthread_mutex_t                 services_mutex;
-	pthread_mutex_t                 audio_sources_mutex;
-
-	struct obs_view                 main_view;
-
-	long long                       unnamed_index;
-
-	volatile bool                   valid;
+	pthread_mutex_t      sources_mutex;
+	pthread_mutex_t      displays_mutex;
+	pthread_mutex_t      outputs_mutex;
+	pthread_mutex_t      encoders_mutex;
+	pthread_mutex_t      services_mutex;
+	pthread_mutex_t      audio_sources_mutex;
+	struct obs_view      main_view;
+	long long            unnamed_index;
+	volatile bool        valid;
 };
 
 /* user hotkeys */
@@ -382,33 +379,32 @@ struct obs_core_hotkeys {
 
 // xzm_@_OBS核心对象
 struct obs_core {
-	struct obs_module               *first_module;
-	DARRAY(struct obs_module_path)  module_paths;
+	struct obs_module               *first_module; // 第一个模块指针
+	DARRAY(struct obs_module_path)  module_paths;  // 链表模块路径
 
-	DARRAY(struct obs_source_info)  source_types;
-	DARRAY(struct obs_source_info)  input_types;
-	DARRAY(struct obs_source_info)  filter_types;
-	DARRAY(struct obs_source_info)  transition_types;
-	DARRAY(struct obs_output_info)  output_types;
-	DARRAY(struct obs_encoder_info) encoder_types;
-	DARRAY(struct obs_service_info) service_types;
-	DARRAY(struct obs_modal_ui)     modal_ui_callbacks;
-	DARRAY(struct obs_modeless_ui)  modeless_ui_callbacks;
+	DARRAY(struct obs_source_info)  source_types;          // 链表   资源类型
+	DARRAY(struct obs_source_info)  input_types;           // 链表   输入类型
+	DARRAY(struct obs_source_info)  filter_types;          // 链表   过滤类型
+	DARRAY(struct obs_source_info)  transition_types;      // 链表   变换类型
+	DARRAY(struct obs_output_info)  output_types;          // 链表   输出类型
+	DARRAY(struct obs_encoder_info) encoder_types;         // 链表   编码类型
+	DARRAY(struct obs_service_info) service_types;         // 链表   服务类型
+	DARRAY(struct obs_modal_ui)     modal_ui_callbacks;    // 链表   模态UI界面
+	DARRAY(struct obs_modeless_ui)  modeless_ui_callbacks; // 链表 非模态UI界面
 
-	signal_handler_t                *signals;
-	proc_handler_t                  *procs;
+	signal_handler_t                *signals;  // 信号句柄
+	proc_handler_t                  *procs;    // 进程句柄
 
-	char                            *locale;
-	char                            *module_config_path;
-	bool                            name_store_owned;
-	profiler_name_store_t           *name_store;
+	char                            *locale;             // 
+	char                            *module_config_path; // 模块配置文件路径
+	bool                            name_store_owned;    // 
+	profiler_name_store_t           *name_store;         // 
 
-	/* segmented into multiple sub-structures to keep things a bit more
-	 * clean and organized */
-	struct obs_core_video           video;
-	struct obs_core_audio           audio;
-	struct obs_core_data            data;
-	struct obs_core_hotkeys         hotkeys;
+	/* 分成多个子结构，是这件事情被组织的更清晰些segmented into multiple sub-structures to keep things a bit more clean and organized */
+	struct obs_core_video           video;   // 视频核心
+	struct obs_core_audio           audio;   // 音频核心
+	struct obs_core_data            data;    // 数据核心
+	struct obs_core_hotkeys         hotkeys; // 热键核心
 };
 
 extern struct obs_core *obs;

@@ -290,6 +290,7 @@ static void obs_source_hotkey_push_to_talk(void *data,
 	source->user_push_to_talk_pressed = pressed;
 }
 
+// 初始化音频热键
 static void obs_source_init_audio_hotkeys(struct obs_source *source)
 {
 	if (!(source->info.output_flags & OBS_SOURCE_AUDIO) ||
@@ -314,6 +315,7 @@ static void obs_source_init_audio_hotkeys(struct obs_source *source)
 			obs_source_hotkey_push_to_talk, source);
 }
 
+// 内部分配内存创建obs_source
 static obs_source_t *obs_source_create_internal(const char *id,
 		const char *name, obs_data_t *settings,
 		obs_data_t *hotkey_data, bool private)
@@ -376,6 +378,7 @@ fail:
 	return NULL;
 }
 
+// 创建资源
 obs_source_t *obs_source_create(const char *id, const char *name,
 		obs_data_t *settings, obs_data_t *hotkey_data)
 {
@@ -383,12 +386,14 @@ obs_source_t *obs_source_create(const char *id, const char *name,
 			false);
 }
 
+// 创建私有资源
 obs_source_t *obs_source_create_private(const char *id, const char *name,
 		obs_data_t *settings)
 {
 	return obs_source_create_internal(id, name, settings, NULL, true);
 }
 
+// 重复的过滤器
 static void duplicate_filters(obs_source_t *dst, obs_source_t *src,
 		bool private)
 {
@@ -461,6 +466,7 @@ obs_source_t *obs_source_duplicate(obs_source_t *source,
 	return new_source;
 }
 
+// frame初始化
 void obs_source_frame_init(struct obs_source_frame *frame,
 		enum video_format format, uint32_t width, uint32_t height)
 {

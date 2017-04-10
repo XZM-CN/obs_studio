@@ -571,6 +571,7 @@ static T GetOBSRef(QListWidgetItem *item)
 	return item->data(static_cast<int>(QtDataRole::OBSRef)).value<T>();
 }
 
+// 设置当前选中场景
 void OBSBasic::SetCurrentScene(OBSSource scene, bool force)
 {
 	if (!IsPreviewProgramMode()) {

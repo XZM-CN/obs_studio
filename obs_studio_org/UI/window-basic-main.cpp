@@ -3189,7 +3189,7 @@ void OBSBasic::on_actionAddScene_triggered()
 			return;
 		}
 
-		// 创建创建场景资源
+		// 通过name获取名字
 		obs_source_t *source = obs_get_source_by_name(name.c_str());
 		if (source) {
 			QMessageBox::information(this,
@@ -3201,10 +3201,19 @@ void OBSBasic::on_actionAddScene_triggered()
 			return;
 		}
 
+		// 创建场景
 		obs_scene_t *scene = obs_scene_create(name.c_str());
+
+		// 通过scene查找相应的资源
 		source = obs_scene_get_source(scene);
+
+		// 添加场景映射的资源
 		AddScene(source);
+
+		// 设置当前场景
 		SetCurrentScene(source);
+
+		// 
 		obs_scene_release(scene);
 	}
 }

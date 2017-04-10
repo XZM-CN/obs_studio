@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Mar 26 00:03:20 2017
+/* at Mon Apr 10 14:38:16 2017
  */
 /* Compiler settings for D:/obs_studio/obs_studio_org/plugins/decklink/win/decklink-sdk/DeckLinkAPI.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
