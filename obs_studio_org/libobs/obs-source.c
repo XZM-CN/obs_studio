@@ -63,8 +63,14 @@ static inline bool deinterlacing_enabled(const struct obs_source *source)
 	return source->deinterlace_mode != OBS_DEINTERLACE_MODE_DISABLE;
 }
 
+// 通过id获取资源模板
 const struct obs_source_info *get_source_info(const char *id)
 {
+	for (size_t i = 0; i < obs->source_types.num; i++) {
+		struct obs_source_info *info = &obs->source_types.array[i];
+		blog(LOG_DEBUG, "xzm_@__get_source_info\t%s ", info->id);
+	}
+
 	for (size_t i = 0; i < obs->source_types.num; i++) {
 		struct obs_source_info *info = &obs->source_types.array[i];
 		if (strcmp(info->id, id) == 0)
@@ -104,10 +110,12 @@ static const char *source_signals[] = {
 	NULL
 };
 
+// 初始化obs_context_data
 bool obs_source_init_context(struct obs_source *source,
 		obs_data_t *settings, const char *name, obs_data_t *hotkey_data,
 		bool private)
 {
+	// 取obs_context_data的内存地址
 	if (!obs_context_data_init(&source->context, OBS_OBJ_TYPE_SOURCE,
 				settings, name, hotkey_data, private))
 		return false;
@@ -116,12 +124,14 @@ bool obs_source_init_context(struct obs_source *source,
 			source_signals);
 }
 
+// 获取obs_source_info的id字符串值
 const char *obs_source_get_display_name(const char *id)
 {
 	const struct obs_source_info *info = get_source_info(id);
 	return (info != NULL) ? info->get_name(info->type_data) : NULL;
 }
 
+// 分配音频输出缓冲器
 static void allocate_audio_output_buffer(struct obs_source *source)
 {
 	size_t size = sizeof(float) *
@@ -138,12 +148,14 @@ static void allocate_audio_output_buffer(struct obs_source *source)
 	}
 }
 
+// 是否是异步视频源
 static inline bool is_async_video_source(const struct obs_source *source)
 {
 	return (source->info.output_flags & OBS_SOURCE_ASYNC_VIDEO) ==
 		OBS_SOURCE_ASYNC_VIDEO;
 }
 
+// 是否是音频源
 static inline bool is_audio_source(const struct obs_source *source)
 {
 	return source->info.output_flags & OBS_SOURCE_AUDIO;
@@ -156,7 +168,7 @@ static inline bool is_composite_source(const struct obs_source *source)
 
 extern char *find_libobs_data_file(const char *file);
 
-/* internal initialization */
+/* internal initialization 内部初始化*/
 bool obs_source_init(struct obs_source *source)
 {
 	pthread_mutexattr_t attr;
@@ -220,6 +232,7 @@ bool obs_source_init(struct obs_source *source)
 	return true;
 }
 
+// obs_source热键是否互斥(冲突)
 static bool obs_source_hotkey_mute(void *data,
 		obs_hotkey_pair_id id, obs_hotkey_t *key, bool pressed)
 {
@@ -234,6 +247,7 @@ static bool obs_source_hotkey_mute(void *data,
 	return true;
 }
 
+// obs_source热键是否不互斥(冲突)
 static bool obs_source_hotkey_unmute(void *data,
 		obs_hotkey_pair_id id, obs_hotkey_t *key, bool pressed)
 {
@@ -322,7 +336,9 @@ static obs_source_t *obs_source_create_internal(const char *id,
 {
 	struct obs_source *source = bzalloc(sizeof(struct obs_source));
 
+	// 通过id找到资源模板
 	const struct obs_source_info *info = get_source_info(id);
+
 	if (!info) {
 		blog(LOG_ERROR, "Source ID '%s' not found", id);
 
@@ -343,8 +359,8 @@ static obs_source_t *obs_source_create_internal(const char *id,
 	source->push_to_mute_key = OBS_INVALID_HOTKEY_ID;
 	source->push_to_talk_key = OBS_INVALID_HOTKEY_ID;
 
-	if (!obs_source_init_context(source, settings, name, hotkey_data,
-				private))
+	// 初始化obs_source类的obs_context_data
+	if (!obs_source_init_context(source, settings, name, hotkey_data, private))
 		goto fail;
 
 	if (info && info->get_defaults)
@@ -382,6 +398,7 @@ fail:
 obs_source_t *obs_source_create(const char *id, const char *name,
 		obs_data_t *settings, obs_data_t *hotkey_data)
 {
+	// 内部创建资源
 	return obs_source_create_internal(id, name, settings, hotkey_data,
 			false);
 }

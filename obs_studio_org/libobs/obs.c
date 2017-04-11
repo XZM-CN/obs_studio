@@ -982,7 +982,7 @@ int obs_reset_video(struct obs_video_info *ovi)
 		break;
 	}
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "obs_reset_video()---------------------------------");
 	blog(LOG_INFO, "video settings reset:\n"
 	               "\tbase resolution:   %dx%d\n"
 	               "\toutput resolution: %dx%d\n"
@@ -1018,7 +1018,7 @@ bool obs_reset_audio(const struct obs_audio_info *oai)
 	ai.speakers = oai->speakers;
 	ai.input_callback = audio_callback;
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "obs_reset_audio()---------------------------------");
 	blog(LOG_INFO, "audio settings reset:\n"
 	               "\tsamples per sec: %d\n"
 	               "\tspeakers:        %d",
@@ -1343,6 +1343,14 @@ static inline void *get_context_by_name(void *vfirst, const char *name,
 	pthread_mutex_lock(mutex);
 
 	context = *first;
+	
+	// xzm_@_ Êä³ölog
+	struct obs_context_data *pcontext = *first;
+	while (pcontext) {
+		blog(LOG_DEBUG, "xzm_@__obs_register_source_s\t%s ", pcontext->name);
+		pcontext = pcontext->next;
+	}
+
 	while (context) {
 		if (!context->private && strcmp(context->name, name) == 0) {
 			context = addref(context);

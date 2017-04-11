@@ -158,7 +158,7 @@ static void *aac_create(obs_data_t *settings, obs_encoder_t *encoder)
 	enc->encoder = encoder;
 	enc->aac     = avcodec_find_encoder(AV_CODEC_ID_AAC);
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "aac_create()---------------------------------");
 
 	if (!enc->aac) {
 		warn("Couldn't find encoder");

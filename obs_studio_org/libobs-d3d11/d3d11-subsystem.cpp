@@ -631,7 +631,7 @@ int device_create(gs_device_t **p_device, uint32_t adapter)
 	int errorcode = GS_SUCCESS;
 
 	try {
-		blog(LOG_INFO, "---------------------------------");
+		blog(LOG_INFO, "device_create()---------------------------------");
 		blog(LOG_INFO, "Initializing D3D11..");
 		LogD3DAdapters();
 

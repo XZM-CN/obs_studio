@@ -606,7 +606,7 @@ void OBSBasic::SetCurrentScene(OBSSource scene, bool force)
 	UpdateSceneSelection(scene);
 
 	bool userSwitched = (!force && !disableSaving);
-	blog(LOG_INFO, "%s to scene '%s'",
+	blog(LOG_INFO, "xzm_@__ %s to scene '%s'",
 			userSwitched ? "User switched" : "Switched",
 			obs_source_get_name(scene));
 }

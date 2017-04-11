@@ -891,7 +891,7 @@ bool DShowInput::UpdateVideoConfig(obs_data_t *settings)
 	os_wcs_to_utf8_ptr(videoConfig.path.c_str(), videoConfig.path.size(),
 			&path_utf8);
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "UpdateVideoConfig()---------------------------------");
 	blog(LOG_INFO, "[DShow Device: '%s'] settings updated: \n"
 			"\tvideo device: %s\n"
 			"\tvideo path: %s\n"

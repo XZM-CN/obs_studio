@@ -530,7 +530,7 @@ static bool update_settings(struct obs_x264 *obsx264, obs_data_t *settings)
 
 	paramlist = strlist_split(opts, ' ', false);
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "update_settings()---------------------------------");
 
 	if (!obsx264->context) {
 		override_base_params(obsx264, paramlist,

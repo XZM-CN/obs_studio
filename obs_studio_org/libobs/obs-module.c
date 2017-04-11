@@ -99,8 +99,7 @@ static inline char *get_module_name(const char *file)
 extern void reset_win32_symbol_paths(void);
 #endif
 
-int obs_open_module(obs_module_t **module, const char *path,
-		const char *data_path)
+int obs_open_module(obs_module_t **module, const char *path, const char *data_path)
 {
 	struct obs_module mod = {0};
 	int errorcode;
@@ -108,7 +107,7 @@ int obs_open_module(obs_module_t **module, const char *path,
 	if (!module || !path || !obs)
 		return MODULE_ERROR;
 
-	blog(LOG_DEBUG, "---------------------------------");
+	blog(LOG_DEBUG, "************************************************************************************************************");
 
 	mod.module = os_dlopen(path);
 	if (!mod.module) {
@@ -278,8 +277,7 @@ void obs_load_all_modules(void)
 	profile_end(obs_load_all_modules_name);
 }
 
-static inline void make_data_dir(struct dstr *parsed_data_dir,
-		const char *data_dir, const char *name)
+static inline void make_data_dir(struct dstr *parsed_data_dir, const char *data_dir, const char *name)
 {
 	dstr_copy(parsed_data_dir, data_dir);
 	dstr_replace(parsed_data_dir, "%module%", name);
@@ -302,8 +300,7 @@ static char *make_data_directory(const char *module_name, const char *data_dir)
 	return parsed_data_dir.array;
 }
 
-static bool parse_binary_from_directory(struct dstr *parsed_bin_path,
-		const char *bin_path, const char *file)
+static bool parse_binary_from_directory(struct dstr *parsed_bin_path, const char *bin_path, const char *file)
 {
 	struct dstr directory = {0};
 	bool found = true;
@@ -335,9 +332,7 @@ static bool parse_binary_from_directory(struct dstr *parsed_bin_path,
 	return found;
 }
 
-static void process_found_module(struct obs_module_path *omp,
-		const char *path, bool directory,
-		obs_find_module_callback_t callback, void *param)
+static void process_found_module(struct obs_module_path *omp, const char *path, bool directory, obs_find_module_callback_t callback, void *param)
 {
 	struct obs_module_info info;
 	struct dstr            name = {0};
@@ -377,8 +372,7 @@ static void process_found_module(struct obs_module_path *omp,
 	dstr_free(&parsed_bin_path);
 }
 
-static void find_modules_in_path(struct obs_module_path *omp,
-		obs_find_module_callback_t callback, void *param)
+static void find_modules_in_path(struct obs_module_path *omp, obs_find_module_callback_t callback, void *param)
 {
 	struct dstr search_path = {0};
 	char *module_start;
@@ -462,8 +456,7 @@ void free_module(struct obs_module *mod)
 	bfree(mod);
 }
 
-lookup_t *obs_module_load_locale(obs_module_t *module,
-		const char *default_locale, const char *locale)
+lookup_t *obs_module_load_locale(obs_module_t *module, const char *default_locale, const char *locale)
 {
 	struct dstr str    = {0};
 	lookup_t    *lookup = NULL;
@@ -564,6 +557,7 @@ cleanup:
 #define service_warn(format, ...) \
 	blog(LOG_WARNING, "obs_register_service: " format, ##__VA_ARGS__)
 
+// xzm_@__×¢²á×ÊÔ´
 void obs_register_source_s(const struct obs_source_info *info, size_t size)
 {
 	struct obs_source_info data = {0};
@@ -643,13 +637,15 @@ void obs_register_source_s(const struct obs_source_info *info, size_t size)
 	if (size > sizeof(data)) {
 		source_warn("Tried to register obs_source_info with size "
 				"%llu which is more than libobs currently "
-				"supports (%llu)", (long long unsigned)size,
-				(long long unsigned)sizeof(data));
+				"supports (%llu)", (long long unsigned)size, (long long unsigned)sizeof(data));
 		goto error;
 	}
 
+	blog(LOG_DEBUG, "xzm_@__obs_register_source_s\t%s ", info->id);
+
 	if (array)
 		darray_push_back(sizeof(struct obs_source_info), array, &data);
+
 	da_push_back(obs->source_types, &data);
 	return;
 
@@ -660,8 +656,7 @@ error:
 void obs_register_output_s(const struct obs_output_info *info, size_t size)
 {
 	if (find_output(info->id)) {
-		output_warn("Output id '%s' already exists!  "
-		                  "Duplicate library?", info->id);
+		output_warn("Output id '%s' already exists!  Duplicate library?", info->id);
 		goto error;
 	}
 
@@ -677,12 +672,10 @@ void obs_register_output_s(const struct obs_output_info *info, size_t size)
 		CHECK_REQUIRED_VAL_(info, encoded_packet, obs_register_output);
 	} else {
 		if (info->flags & OBS_OUTPUT_VIDEO)
-			CHECK_REQUIRED_VAL_(info, raw_video,
-					obs_register_output);
+			CHECK_REQUIRED_VAL_(info, raw_video, obs_register_output);
 
 		if (info->flags & OBS_OUTPUT_AUDIO)
-			CHECK_REQUIRED_VAL_(info, raw_audio,
-					obs_register_output);
+			CHECK_REQUIRED_VAL_(info, raw_audio, obs_register_output);
 	}
 #undef CHECK_REQUIRED_VAL_
 
@@ -696,8 +689,7 @@ error:
 void obs_register_encoder_s(const struct obs_encoder_info *info, size_t size)
 {
 	if (find_encoder(info->id)) {
-		encoder_warn("Encoder id '%s' already exists!  "
-		                  "Duplicate library?", info->id);
+		encoder_warn("Encoder id '%s' already exists!  Duplicate library?", info->id);
 		goto error;
 	}
 

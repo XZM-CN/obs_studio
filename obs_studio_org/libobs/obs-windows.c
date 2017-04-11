@@ -95,6 +95,7 @@ char *find_libobs_data_file(const char *file)
 	return NULL;
 }
 
+// 输出CPU信息
 static void log_processor_info(void)
 {
 	HKEY    key;
@@ -129,6 +130,7 @@ static void log_processor_info(void)
 	RegCloseKey(key);
 }
 
+// 
 static DWORD num_logical_cores(ULONG_PTR mask)
 {
 	DWORD     left_shift    = sizeof(ULONG_PTR) * 8 - 1;
@@ -179,6 +181,7 @@ static void log_processor_cores(void)
 	free(info);
 }
 
+// 物理内存
 static void log_available_memory(void)
 {
 	MEMORYSTATUSEX ms;
@@ -198,6 +201,7 @@ static void log_available_memory(void)
 			note);
 }
 
+// windows版本
 static void log_windows_version(void)
 {
 	struct win_version_info ver;
@@ -211,6 +215,7 @@ static void log_windows_version(void)
 			windows_bitness);
 }
 
+// 是否以administrator身份登录计算机
 static void log_admin_status(void)
 {
 	SID_IDENTIFIER_AUTHORITY auth = SECURITY_NT_AUTHORITY;
@@ -231,6 +236,7 @@ static void log_admin_status(void)
 }
 
 typedef HRESULT (WINAPI *dwm_is_composition_enabled_t)(BOOL*);
+
 
 static void log_aero(void)
 {
@@ -257,6 +263,7 @@ static void log_aero(void)
 			aeroMessage);
 }
 
+// 系统参数信息
 void log_system_info(void)
 {
 	struct win_version_info ver;
@@ -272,7 +279,7 @@ void log_system_info(void)
 	log_aero();
 }
 
-
+// obs热键系统
 struct obs_hotkeys_platform {
 	int vk_codes[OBS_KEY_LAST_VALUE];
 };
@@ -424,12 +431,14 @@ bool obs_hotkeys_platform_init(struct obs_core_hotkeys *hotkeys)
 	return true;
 }
 
+// 释放热键
 void obs_hotkeys_platform_free(struct obs_core_hotkeys *hotkeys)
 {
 	bfree(hotkeys->platform_context);
 	hotkeys->platform_context = NULL;
 }
 
+// 键盘是否按下
 static bool vk_down(DWORD vk)
 {
 	short state = GetAsyncKeyState(vk);
@@ -438,6 +447,7 @@ static bool vk_down(DWORD vk)
 	return down;
 }
 
+// 热键是否按下
 bool obs_hotkeys_platform_is_pressed(obs_hotkeys_platform_t *context,
 		obs_key_t key)
 {
@@ -449,6 +459,7 @@ bool obs_hotkeys_platform_is_pressed(obs_hotkeys_platform_t *context,
 	return vk_down(obs_key_to_virtual_key(key));
 }
 
+// 
 void obs_key_to_str(obs_key_t key, struct dstr *str)
 {
 	wchar_t name[128] = L"";
@@ -522,6 +533,7 @@ int obs_key_to_virtual_key(obs_key_t key)
 	return obs->hotkeys.platform_context->vk_codes[(int)key];
 }
 
+// 增加组合键
 static inline void add_combo_key(obs_key_t key, struct dstr *str)
 {
 	struct dstr key_str = {0};
@@ -560,6 +572,7 @@ void obs_key_combination_to_str(obs_key_combination_t combination,
 
 bool sym_initialize_called = false;
 
+// 
 void reset_win32_symbol_paths(void)
 {
 	static BOOL (WINAPI *sym_initialize_w)(HANDLE, const wchar_t*, BOOL);

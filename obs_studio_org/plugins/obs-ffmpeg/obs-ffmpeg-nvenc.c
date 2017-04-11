@@ -302,7 +302,7 @@ static void *nvenc_create(obs_data_t *settings, obs_encoder_t *encoder)
 		enc->nvenc = avcodec_find_encoder_by_name("nvenc_h264");
 	enc->first_packet = true;
 
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "nvenc_create()---------------------------------");
 
 	if (!enc->nvenc) {
 		warn("Couldn't find encoder");

@@ -118,7 +118,7 @@ static void SetOBSRef(QListWidgetItem *item, T &&val)
 	item->setData(static_cast<int>(QtDataRole::OBSRef), QVariant::fromValue(val));
 }
 
-
+// 增加扩展模块路径
 static void AddExtraModulePaths()
 {
 	char base_module_dir[512];
@@ -221,7 +221,7 @@ OBSBasic::OBSBasic(QWidget *parent)
 	stringstream name;
 	name << "OBS " << App()->GetVersionString();
 	blog(LOG_INFO, "%s", name.str().c_str());
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "OBSBasic::OBSBasic(QWidget *parent)---------------------------------");
 
 	UpdateTitleBar();
 
@@ -472,6 +472,7 @@ void OBSBasic::Save(const char *file)
 	obs_data_array_release(savedPreviewProjectorList);
 }
 
+// 加载音频设备
 static void LoadAudioDevice(const char *name, int channel, obs_data_t *parent)
 {
 	obs_data_t *data = obs_data_get_obj(parent, name);
@@ -487,6 +488,7 @@ static void LoadAudioDevice(const char *name, int channel, obs_data_t *parent)
 	obs_data_release(data);
 }
 
+// 判断是否有音频设备
 static inline bool HasAudioDevices(const char *source_id)
 {
 	const char *output_id = source_id;
@@ -505,6 +507,7 @@ static inline bool HasAudioDevices(const char *source_id)
 	return count != 0;
 }
 
+// 创建第一个run起来的资源
 void OBSBasic::CreateFirstRunSources()
 {
 	bool hasDesktopAudio = HasAudioDevices(App()->OutputAudioSource());
@@ -518,6 +521,7 @@ void OBSBasic::CreateFirstRunSources()
 				Str("Basic.AuxDevice1"), 3);
 }
 
+// 创建默认的场景
 void OBSBasic::CreateDefaultScene(bool firstStart)
 {
 	disableSaving++;
@@ -540,6 +544,7 @@ void OBSBasic::CreateDefaultScene(bool firstStart)
 	disableSaving--;
 }
 
+// 记录item通过name
 static void ReorderItemByName(QListWidget *lw, const char *name, int newIndex)
 {
 	for (int i = 0; i < lw->count(); i++) {
@@ -555,6 +560,7 @@ static void ReorderItemByName(QListWidget *lw, const char *name, int newIndex)
 	}
 }
 
+// 加载场景列表顺序
 void OBSBasic::LoadSceneListOrder(obs_data_array_t *array)
 {
 	size_t num = obs_data_array_count(array);
@@ -569,6 +575,7 @@ void OBSBasic::LoadSceneListOrder(obs_data_array_t *array)
 	}
 }
 
+// 加载以保存的工程
 void OBSBasic::LoadSavedProjectors(obs_data_array_t *array)
 {
 	size_t num = obs_data_array_count(array);
@@ -582,6 +589,7 @@ void OBSBasic::LoadSavedProjectors(obs_data_array_t *array)
 	}
 }
 
+// 加载以保存的预览工程
 void OBSBasic::LoadSavedPreviewProjectors(obs_data_array_t *array)
 {
 	size_t num = obs_data_array_count(array);
@@ -595,6 +603,7 @@ void OBSBasic::LoadSavedPreviewProjectors(obs_data_array_t *array)
 	}
 }
 
+// 日志过滤器
 static void LogFilter(obs_source_t*, obs_source_t *filter, void *v_val)
 {
 	const char *name = obs_source_get_name(filter);
@@ -608,6 +617,7 @@ static void LogFilter(obs_source_t*, obs_source_t *filter, void *v_val)
 	blog(LOG_INFO, "%s- filter: '%s' (%s)", indent.c_str(), name, id);
 }
 
+// 记录场景item日志
 static bool LogSceneItem(obs_scene_t*, obs_sceneitem_t *item, void*)
 {
 	obs_source_t *source = obs_sceneitem_get_source(item);
@@ -632,6 +642,7 @@ static bool LogSceneItem(obs_scene_t*, obs_sceneitem_t *item, void*)
 	return true;
 }
 
+// 记录场景日志
 void OBSBasic::LogScenes()
 {
 	blog(LOG_INFO, "------------------------------------------------");
@@ -652,6 +663,7 @@ void OBSBasic::LogScenes()
 	blog(LOG_INFO, "------------------------------------------------");
 }
 
+// 加载
 void OBSBasic::Load(const char *file)
 {
 	if (!file || !os_file_exists(file)) {
@@ -874,6 +886,7 @@ void OBSBasic::SaveService()
 	obs_data_release(data);
 }
 
+// 加载串流服务器地址
 bool OBSBasic::LoadService()
 {
 	const char *type;
@@ -904,6 +917,7 @@ bool OBSBasic::LoadService()
 	return !!service;
 }
 
+// 初始化服务器地址
 bool OBSBasic::InitService()
 {
 	ProfileScope("OBSBasic::InitService");
@@ -936,6 +950,7 @@ static const double scaled_vals[] =
 	0.0
 };
 
+// 初始化基本的默认配置文件
 bool OBSBasic::InitBasicConfigDefaults()
 {
 	QList<QScreen*> screens = QGuiApplication::screens();
@@ -1089,6 +1104,7 @@ bool OBSBasic::InitBasicConfigDefaults()
 	return true;
 }
 
+// 初始化基本的配置
 bool OBSBasic::InitBasicConfig()
 {
 	ProfileScope("OBSBasic::InitBasicConfig");
@@ -1129,6 +1145,7 @@ bool OBSBasic::InitBasicConfig()
 	return InitBasicConfigDefaults();
 }
 
+// 初始化回调函数
 void OBSBasic::InitOBSCallbacks()
 {
 	ProfileScope("OBSBasic::InitOBSCallbacks");
@@ -1188,6 +1205,7 @@ void OBSBasic::InitPrimitives()
 	obs_leave_graphics();
 }
 
+// 重播缓冲区
 void OBSBasic::ReplayBufferClicked()
 {
 	if (outputHandler->ReplayBufferActive())
@@ -1196,6 +1214,7 @@ void OBSBasic::ReplayBufferClicked()
 		StartReplayBuffer();
 };
 
+// 重置输出
 void OBSBasic::ResetOutputs()
 {
 	ProfileScope("OBSBasic::ResetOutputs");
@@ -1246,6 +1265,7 @@ extern obs_frontend_callbacks *InitializeAPIInterface(OBSBasic *main);
 	"Failed to initialize video.  Your GPU may not be supported, " \
 	"or your graphics drivers may need to be updated."
 
+// OBS 初始化
 void OBSBasic::OBSInit()
 {
 	ProfileScope("OBSBasic::OBSInit");
@@ -1306,9 +1326,9 @@ void OBSBasic::OBSInit()
 	api = InitializeAPIInterface(this);
 
 	AddExtraModulePaths();
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "OBSBasic::OBSInit()---------------------------------");
 	obs_load_all_modules();
-	blog(LOG_INFO, "---------------------------------");
+	blog(LOG_INFO, "OBSBasic::OBSInit()---------------------------------");
 	obs_log_loaded_modules();
 
 	blog(LOG_INFO, STARTUP_SEPARATOR);
@@ -1434,6 +1454,7 @@ void OBSBasic::OBSInit()
 	OpenSavedProjectors();
 }
 
+// 初始化热键
 void OBSBasic::InitHotkeys()
 {
 	ProfileScope("OBSBasic::InitHotkeys");
@@ -1494,6 +1515,7 @@ void OBSBasic::ProcessHotkey(obs_hotkey_id id, bool pressed)
 	obs_hotkey_trigger_routed_callback(id, pressed);
 }
 
+// 热键触发
 void OBSBasic::HotkeyTriggered(void *data, obs_hotkey_id id, bool pressed)
 {
 	OBSBasic &basic = *static_cast<OBSBasic*>(data);
@@ -1501,6 +1523,7 @@ void OBSBasic::HotkeyTriggered(void *data, obs_hotkey_id id, bool pressed)
 			Q_ARG(obs_hotkey_id, id), Q_ARG(bool, pressed));
 }
 
+// 创建热键
 void OBSBasic::CreateHotkeys()
 {
 	ProfileScope("OBSBasic::CreateHotkeys");

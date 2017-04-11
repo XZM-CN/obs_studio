@@ -983,6 +983,7 @@ static bool scene_audio_render(void *data, uint64_t *ts_out,
 	return true;
 }
 
+// _xzm_@__ scene_info静态初始化，初始数据成员和函数指针
 const struct obs_source_info scene_info =
 {
 	.id            = "scene",
