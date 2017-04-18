@@ -85,6 +85,7 @@ int pthread_mutex_init (pthread_mutex_t * mutex, const pthread_mutexattr_t * att
 		mx->robustNode = NULL;
 		if (attr == NULL || *attr == NULL)
 		{
+			// 设置锁的类型
 			mx->kind = PTHREAD_MUTEX_DEFAULT;
 		}
 		else
